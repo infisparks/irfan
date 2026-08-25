@@ -224,6 +224,19 @@
             const [formSubmitted, setFormSubmitted] = useState(false);
             const [isSubmitting, setIsSubmitting] = useState(false);
             const [toastMessage, setToastMessage] = useState(null);
+            const [showFloatingPass, setShowFloatingPass] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    if (window.scrollY > 350) {
+                        setShowFloatingPass(true);
+                    } else {
+                        setShowFloatingPass(false);
+                    }
+                };
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
 
             // Lead Form Data State
             const [formData, setFormData] = useState({
@@ -388,26 +401,29 @@
                                 </div>
                             </div>
 
-                            {/* 3. Action CTA Buttons (Positioned directly after thumbnail) */}
-                            <div className="flex items-center gap-2.5 w-full max-w-md justify-center">
+                            {/* 3. Action CTA Buttons (Full space to Schedule VIP Visit) */}
+                            <div className="flex flex-col gap-2 w-full max-w-md justify-center px-1">
                                 <a 
                                     href="https://wa.me/919823000000?text=Hello%20Er.%20Irfan%20Group,%20I%20am%20interested%20in%20a%20VIP%20Site%20Visit%20and%20Pricing%20Catalog" 
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex-1 sm:flex-none px-5 sm:px-8 py-3 rounded-lg gold-button-gradient text-obsidian-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all hover:scale-105 shadow-xl shadow-gold-400/20 flex items-center justify-center space-x-2 shine-effect"
+                                    className="w-full py-3.5 px-6 rounded-xl gold-button-gradient text-obsidian-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all hover:scale-[1.02] shadow-xl shadow-gold-400/25 flex items-center justify-center space-x-2 shine-effect"
                                 >
-                                    <span>Schedule VIP Visit</span>
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <span>Schedule VIP Site Visit</span>
+                                    <svg className="w-4 h-4 text-obsidian-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
                                 </a>
                                 
-                                <a 
-                                    href="#solution" 
-                                    className="px-4 sm:px-6 py-3 rounded-lg glass-obsidian hover:bg-obsidian-800 text-slate-200 border border-gold-400/30 font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all flex items-center justify-center shrink-0"
-                                >
-                                    <span>ROI Calculator</span>
-                                </a>
+                                <div className="flex items-center justify-center space-x-4 text-xs pt-0.5">
+                                    <a 
+                                        href="#solution" 
+                                        className="text-gold-300 hover:text-gold-200 transition-colors font-medium flex items-center space-x-1"
+                                    >
+                                        <span>⚡ 25-Yr Solar ROI Calculator</span>
+                                        <span>↓</span>
+                                    </a>
+                                </div>
                             </div>
 
                             {/* 4. Trust Badge Strip */}
@@ -1401,13 +1417,13 @@
                         </div>
                     </footer>
 
-                    {/* Floating Mobile Quick Action Glass Bar */}
-                    <div className="fixed bottom-4 right-4 z-40 flex items-center space-x-2">
+                    {/* Floating Mobile Quick Action Glass Bar (Visible only when scrolled down) */}
+                    <div className={`fixed bottom-4 right-4 z-40 flex items-center space-x-2 transition-all duration-300 transform ${showFloatingPass ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-12 opacity-0 pointer-events-none'}`}>
                         <a 
                             href="https://wa.me/919823000000?text=Hello%20Er.%20Irfan%20Group,%20I%20am%20interested%20in%20a%20VIP%20Site%20Visit%20Pass"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="gold-button-gradient text-obsidian-950 font-extrabold px-4 py-3 rounded-full shadow-2xl flex items-center space-x-2 text-xs border border-gold-300 transition-transform hover:scale-105"
+                            className="gold-button-gradient text-obsidian-950 font-extrabold px-5 py-3.5 rounded-full shadow-2xl flex items-center space-x-2 text-xs sm:text-sm border border-gold-300 transition-transform hover:scale-105"
                         >
                             <span>📱 VIP Site Visit Pass</span>
                         </a>

@@ -807,154 +807,142 @@
                                 </p>
                             </div>
 
-                            {/* 2x2 Luxury Image Cards Grid */}
+                            {/* 2x2 Luxury Full-Image Overlay Cards Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                                 
                                 {/* Card 1: Dual Water Reliability */}
-                                <div className="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-emerald-400/60 shadow-2xl transition-all duration-300">
-                                    <div>
-                                        {/* Image Banner */}
-                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-obsidian-950">
-                                            <img 
-                                                src="./amenity-water.jpg" 
-                                                alt="Dual Water Reliability Pumping Station" 
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
-                                            
-                                            {/* Badge Pill */}
-                                            <div className="absolute top-3.5 left-3.5 bg-emerald-500/25 border border-emerald-500/50 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
-                                                <WaterEmeraldIcon />
-                                                <span>24/7 DUAL WATER</span>
-                                            </div>
-                                        </div>
+                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-emerald-400/70 transition-all duration-500">
+                                    {/* Full Image Background */}
+                                    <img 
+                                        src="./amenity-water.jpg" 
+                                        alt="Dual Water Reliability Pumping Station" 
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    />
+                                    {/* Rich Dark Scrim Vignette Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
 
-                                        {/* Content */}
-                                        <div className="p-6 sm:p-7 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-emerald-200 transition-colors">
-                                                Dual Water Reliability System
-                                            </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
-                                                Deep-well 24-hour boring water supplemented by dedicated municipal sweet water connections. Automated Jalpari pressure pumps ensure steady pressure to every floor.
-                                            </p>
+                                    {/* Top Badge & Number */}
+                                    <div className="relative z-10 flex items-center justify-between">
+                                        <div className="bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                            <WaterEmeraldIcon />
+                                            <span>24/7 DUAL WATER</span>
                                         </div>
+                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">01 / SPEC</span>
                                     </div>
 
-                                    <div className="p-6 sm:p-7 pt-0">
-                                        <div className="pt-3.5 border-t border-gold-400/15 flex items-center justify-between text-xs sm:text-sm text-emerald-300 font-semibold">
+                                    {/* Bottom Content Over Image */}
+                                    <div className="relative z-10 space-y-3 pt-16">
+                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-emerald-200 transition-colors leading-tight">
+                                            Dual Water Reliability System
+                                        </h3>
+                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                            Deep-well 24-hour boring water supplemented by dedicated municipal sweet water connections. Automated Jalpari pressure pumps ensure steady pressure to every floor.
+                                        </p>
+                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-emerald-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-emerald-500/40">
                                             <span>✦ Proven Benefit: Zero summer water anxiety or tanker costs.</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Card 2: 100% Sanctioned & Bank Approved */}
-                                <div className="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-2xl transition-all duration-300">
-                                    <div>
-                                        {/* Image Banner */}
-                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-obsidian-950">
-                                            <img 
-                                                src="./amenity-legal.jpg" 
-                                                alt="100% Corporation Sanctioned Blueprints and Deeds" 
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
-                                            
-                                            {/* Badge Pill */}
-                                            <div className="absolute top-3.5 left-3.5 bg-gold-400/25 border border-gold-400/50 text-gold-300 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
-                                                <ShieldGoldIcon />
-                                                <span>100% SANCTIONED</span>
-                                            </div>
-                                        </div>
+                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-gold-400/70 transition-all duration-500">
+                                    {/* Full Image Background */}
+                                    <img 
+                                        src="./amenity-legal.jpg" 
+                                        alt="100% Corporation Sanctioned Blueprints and Deeds" 
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    />
+                                    {/* Rich Dark Scrim Vignette Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
 
-                                        {/* Content */}
-                                        <div className="p-6 sm:p-7 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">
-                                                100% Sanctioned & Bank Approved
-                                            </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
-                                                Fully documented, Malegaon Corporation approved building blueprints. Clear titles ready for immediate, frictionless nationalized bank home loan sanctioning.
-                                            </p>
+                                    {/* Top Badge & Number */}
+                                    <div className="relative z-10 flex items-center justify-between">
+                                        <div className="bg-gold-400/30 border border-gold-400/50 text-gold-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                            <ShieldGoldIcon />
+                                            <span>100% SANCTIONED</span>
                                         </div>
+                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">02 / SPEC</span>
                                     </div>
 
-                                    <div className="p-6 sm:p-7 pt-0">
-                                        <div className="pt-3.5 border-t border-gold-400/15 flex items-center justify-between text-xs sm:text-sm text-gold-300 font-semibold">
-                                            <span>✦ Proven Benefit: Safe, stress-free legal ownership & rapid loan approvals.</span>
+                                    {/* Bottom Content Over Image */}
+                                    <div className="relative z-10 space-y-3 pt-16">
+                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-200 transition-colors leading-tight">
+                                            100% Sanctioned & Bank Approved
+                                        </h3>
+                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                            Fully documented, Malegaon Corporation approved building blueprints. Clear titles ready for immediate, frictionless nationalized bank home loan sanctioning.
+                                        </p>
+                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-gold-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-gold-400/40">
+                                            <span>✦ Proven Benefit: Safe legal ownership & fast bank loan approvals.</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Card 3: Modern HD Security & Connectivity */}
-                                <div className="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-2xl transition-all duration-300">
-                                    <div>
-                                        {/* Image Banner */}
-                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-obsidian-950">
-                                            <img 
-                                                src="./amenity-security.jpg" 
-                                                alt="Modern HD Security and Biometric Access Entrance" 
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
-                                            
-                                            {/* Badge Pill */}
-                                            <div className="absolute top-3.5 left-3.5 bg-blue-500/25 border border-blue-500/50 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
-                                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                                                </svg>
-                                                <span>24/7 HD SURVEILLANCE</span>
-                                            </div>
-                                        </div>
+                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-blue-400/70 transition-all duration-500">
+                                    {/* Full Image Background */}
+                                    <img 
+                                        src="./amenity-security.jpg" 
+                                        alt="Modern HD Security and Biometric Access Entrance" 
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    />
+                                    {/* Rich Dark Scrim Vignette Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
 
-                                        {/* Content */}
-                                        <div className="p-6 sm:p-7 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">
-                                                Modern HD Security & Connectivity
-                                            </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
-                                                24/7 HD CCTV camera coverage for entrance gates, corridors, elevators, and parking levels alongside high-speed Wi-Fi ready common areas.
-                                            </p>
+                                    {/* Top Badge & Number */}
+                                    <div className="relative z-10 flex items-center justify-between">
+                                        <div className="bg-blue-500/30 border border-blue-500/50 text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                            </svg>
+                                            <span>24/7 HD SURVEILLANCE</span>
                                         </div>
+                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">03 / SPEC</span>
                                     </div>
 
-                                    <div className="p-6 sm:p-7 pt-0">
-                                        <div className="pt-3.5 border-t border-gold-400/15 flex items-center justify-between text-xs sm:text-sm text-gold-300 font-semibold">
+                                    {/* Bottom Content Over Image */}
+                                    <div className="relative z-10 space-y-3 pt-16">
+                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-blue-200 transition-colors leading-tight">
+                                            Modern HD Security & Connectivity
+                                        </h3>
+                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                            24/7 HD CCTV camera coverage for entrance gates, corridors, elevators, and parking levels alongside high-speed Wi-Fi ready common areas.
+                                        </p>
+                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-blue-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-blue-500/40">
                                             <span>✦ Proven Benefit: Total protection for women, children, and elders.</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Card 4: Generational Structural Build */}
-                                <div className="glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-2xl transition-all duration-300">
-                                    <div>
-                                        {/* Image Banner */}
-                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-obsidian-950">
-                                            <img 
-                                                src="./amenity-structure.jpg" 
-                                                alt="Earthquake Resistant Architectural Concrete Frame Structure" 
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
-                                            
-                                            {/* Badge Pill */}
-                                            <div className="absolute top-3.5 left-3.5 bg-gold-400/25 border border-gold-400/50 text-gold-300 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
-                                                <CrownIcon />
-                                                <span>SEISMIC RESISTANT RCC</span>
-                                            </div>
-                                        </div>
+                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-gold-400/70 transition-all duration-500">
+                                    {/* Full Image Background */}
+                                    <img 
+                                        src="./amenity-structure.jpg" 
+                                        alt="Earthquake Resistant Architectural Concrete Frame Structure" 
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    />
+                                    {/* Rich Dark Scrim Vignette Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
 
-                                        {/* Content */}
-                                        <div className="p-6 sm:p-7 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">
-                                                Generational Structural Build
-                                            </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
-                                                Constructed using branded 53-grade cement, corrosion-resistant Fe-550 TMT steel bars, and heavy earthquake-resistant RCC frame engineering.
-                                            </p>
+                                    {/* Top Badge & Number */}
+                                    <div className="relative z-10 flex items-center justify-between">
+                                        <div className="bg-gold-400/30 border border-gold-400/50 text-gold-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                            <CrownIcon />
+                                            <span>SEISMIC RESISTANT RCC</span>
                                         </div>
+                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">04 / SPEC</span>
                                     </div>
 
-                                    <div className="p-6 sm:p-7 pt-0">
-                                        <div className="pt-3.5 border-t border-gold-400/15 flex items-center justify-between text-xs sm:text-sm text-gold-300 font-semibold">
+                                    {/* Bottom Content Over Image */}
+                                    <div className="relative z-10 space-y-3 pt-16">
+                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-200 transition-colors leading-tight">
+                                            Generational Structural Build
+                                        </h3>
+                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                            Constructed using branded 53-grade cement, corrosion-resistant Fe-550 TMT steel bars, and heavy earthquake-resistant RCC frame engineering.
+                                        </p>
+                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-gold-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-gold-400/40">
                                             <span>✦ Proven Benefit: Maximum durability with minimal long-term upkeep.</span>
                                         </div>
                                     </div>

@@ -171,6 +171,13 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #d4af37;
         }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-obsidian-950 text-slate-100 antialiased selection:bg-gold-400 selection:text-obsidian-950">
@@ -445,73 +452,215 @@
                         </div>
                     </section>
 
-                    {}
-                    <section id="problem" className="py-20 bg-obsidian-950 text-white relative border-t border-gold-400/15">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* MALEGAON REALITY CHECK SECTION - ULTRA-PROFESSIONAL & MOBILE SLIDABLE */}
+                    <section id="problem" className="py-16 sm:py-24 bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950 text-white relative border-t border-gold-400/20 overflow-hidden">
+                        
+                        {/* Ambient Gold Glow Elements */}
+                        <div className="absolute top-0 right-1/4 w-72 h-72 bg-gold-400/5 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                             
-                            <div className="text-center max-w-3xl mx-auto mb-16">
-                                <span className="text-gold-400 text-xs font-bold uppercase tracking-[0.25em]">The Malegaon Reality Check</span>
-                                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 tracking-tight">
+                            {/* Section Header */}
+                            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+                                <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full glass-obsidian border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-[0.2em] mb-3 shimmer-badge">
+                                    <span className="text-gold-400">⚡</span>
+                                    <span>The Malegaon Reality Check</span>
+                                </div>
+                                <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                                     Stop Settling for Outdated Living Standards.
                                 </h2>
-                                <p className="text-slate-400 mt-4 text-xs sm:text-base leading-relaxed font-light">
-                                    Traditional buildings in Malegaon often suffer from recurring maintenance disputes, unexpected water outages, and unclear property titles. Heritage Group engineered solutions for each of these:
+                                <p className="text-slate-300/90 mt-3 sm:mt-4 text-xs sm:text-sm lg:text-base leading-relaxed font-light px-2">
+                                    Traditional buildings in Malegaon often suffer from recurring lift bill disputes, seasonal dry borings, and unapproved title risks. Er. Irfan Group engineered bulletproof solutions for each:
                                 </p>
                             </div>
 
-                            {/* 3 Interactive UX Problem Cards */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {/* Mobile Swipe Guidance Hint */}
+                            <div className="flex md:hidden items-center justify-between px-2 mb-3 text-[11px] text-gold-300/90 font-medium">
+                                <span className="flex items-center space-x-1.5 animate-pulse-subtle">
+                                    <span>👉</span>
+                                    <span>Swipe horizontally to view all 3 fixes</span>
+                                </span>
+                                <span className="text-slate-400 font-mono">1 / 3 Cards</span>
+                            </div>
+
+                            {/* 3 Interactive UX Problem & Solution Cards - Mobile Slidable Carousel */}
+                            <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 pt-1 px-2 -mx-2 sm:mx-0 sm:px-0">
                                 
-                                {/* Card 1 */}
-                                <div className="glass-gold-card p-8 rounded-2xl relative group">
-                                    <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 mb-6 group-hover:scale-110 transition-transform">
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
+                                {/* Card 1: Maintenance Disputes -> 25-Yr Free Solar Lift */}
+                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-xl transition-all duration-300">
+                                    <div>
+                                        {/* Image Banner */}
+                                        <div className="relative h-44 sm:h-52 overflow-hidden bg-obsidian-950">
+                                            <img 
+                                                src="./problem-solar-elevator.jpg" 
+                                                alt="Solar Powered Net Zero Luxury Elevator Lobby" 
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                            
+                                            {/* Outdated Problem Badge */}
+                                            <div className="absolute top-3 left-3 bg-red-500/25 border border-red-500/50 text-red-300 text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1 shadow-md">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
+                                                <span>Common Pain: Stalled Lifts</span>
+                                            </div>
+
+                                            <div className="absolute bottom-2.5 left-3 text-gold-300 text-[11px] font-mono tracking-wider font-bold">
+                                                ZERO LIFT BILL SYSTEM
+                                            </div>
+                                        </div>
+
+                                        {/* Card Body */}
+                                        <div className="p-5 sm:p-6 space-y-3">
+                                            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">
+                                                Unpredictable Lift Bill Disputes
+                                            </h3>
+                                            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+                                                Unpaid corridor and elevator electricity bills routinely shut down elevators for weeks, creating severe distress for elderly relatives and unlit hallways.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <h3 className="font-serif text-2xl font-bold text-white mb-3">
-                                        Unpredictable Maintenance
-                                    </h3>
-                                    <p className="text-slate-400 text-xs leading-relaxed font-light mb-6">
-                                        Disputes over unpaid corridor & lift electric bills lead to non-operational elevators, distress for elderly relatives, and dark hallways.
-                                    </p>
-                                    <div className="pt-4 border-t border-gold-400/15 text-xs text-gold-300 font-semibold flex items-center space-x-2">
-                                        <span className="text-gold-400 font-bold">✦ Heritage Fix:</span>
-                                        <span>25-Yr Free Solar Electricity</span>
+
+                                    {/* Heritage Fix Box */}
+                                    <div className="p-5 sm:p-6 pt-0">
+                                        <div className="p-3.5 rounded-xl bg-gold-400/10 border border-gold-400/30 text-xs space-y-2">
+                                            <div className="font-bold flex items-center justify-between text-gold-300">
+                                                <span>☀️ Heritage Engineering:</span>
+                                                <span className="text-[10px] bg-gold-400 text-obsidian-950 px-2 py-0.5 rounded font-extrabold">25-YR FREE</span>
+                                            </div>
+                                            <ul className="space-y-1 text-[11px] text-slate-300 font-light">
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-gold-400">✓</span>
+                                                    <span>Dedicated Solar Inverter for Lifts</span>
+                                                </li>
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-gold-400">✓</span>
+                                                    <span>Zero Corridor Electric Assessments</span>
+                                                </li>
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-gold-400">✓</span>
+                                                    <span>24/7 Uninterrupted Vertical Mobility</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* Card 2 */}
-                                <div className="glass-gold-card p-8 rounded-2xl relative group">
-                                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
-                                        <WaterEmeraldIcon />
+                                {/* Card 2: Summer Water Scarcity -> Dual Boring + Municipal Line */}
+                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-emerald-500/25 hover:border-emerald-400/60 shadow-xl transition-all duration-300">
+                                    <div>
+                                        {/* Image Banner */}
+                                        <div className="relative h-44 sm:h-52 overflow-hidden bg-obsidian-950">
+                                            <img 
+                                                src="./problem-dual-water.jpg" 
+                                                alt="Automated High-Tech Water Utility Management Station" 
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                            
+                                            {/* Outdated Problem Badge */}
+                                            <div className="absolute top-3 left-3 bg-red-500/25 border border-red-500/50 text-red-300 text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1 shadow-md">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
+                                                <span>Common Pain: Summer Tankers</span>
+                                            </div>
+
+                                            <div className="absolute bottom-2.5 left-3 text-emerald-300 text-[11px] font-mono tracking-wider font-bold">
+                                                DUAL WATER REDUNDANCY
+                                            </div>
+                                        </div>
+
+                                        {/* Card Body */}
+                                        <div className="p-5 sm:p-6 space-y-3">
+                                            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-200 transition-colors">
+                                                Summer Water Scarcity & Stress
+                                            </h3>
+                                            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+                                                Single boring setups regularly run dry during peak summer months, forcing families to organize expensive, irregular private tanker deliveries.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <h3 className="font-serif text-2xl font-bold text-white mb-3">
-                                        Water Scarcity & Tankers
-                                    </h3>
-                                    <p className="text-slate-400 text-xs leading-relaxed font-light mb-6">
-                                        Single boring setups frequently run dry in summer, forcing residents to organize expensive private water tanker deliveries.
-                                    </p>
-                                    <div className="pt-4 border-t border-gold-400/15 text-xs text-emerald-400 font-semibold flex items-center space-x-2">
-                                        <span className="font-bold">✦ Heritage Fix:</span>
-                                        <span>Dual Boring + Municipal Sweet Line</span>
+
+                                    {/* Heritage Fix Box */}
+                                    <div className="p-5 sm:p-6 pt-0">
+                                        <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs space-y-2">
+                                            <div className="font-bold flex items-center justify-between text-emerald-300">
+                                                <span>💧 Heritage Engineering:</span>
+                                                <span className="text-[10px] bg-emerald-400 text-obsidian-950 px-2 py-0.5 rounded font-extrabold">24/7 DUAL</span>
+                                            </div>
+                                            <ul className="space-y-1 text-[11px] text-slate-300 font-light">
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-emerald-400">✓</span>
+                                                    <span>Dual Heavy Deep Yield Borings</span>
+                                                </li>
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-emerald-400">✓</span>
+                                                    <span>Municipal Sweet Drinking Water Line</span>
+                                                </li>
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-emerald-400">✓</span>
+                                                    <span>Automated Jalpari Sensor Pumping</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* Card 3 */}
-                                <div className="glass-gold-card p-8 rounded-2xl relative group">
-                                    <div className="w-12 h-12 rounded-xl bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
-                                        <ShieldGoldIcon />
+                                {/* Card 3: Legal Uncertainty -> 100% Corporation Sanctioned */}
+                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-xl transition-all duration-300">
+                                    <div>
+                                        {/* Image Banner */}
+                                        <div className="relative h-44 sm:h-52 overflow-hidden bg-obsidian-950">
+                                            <img 
+                                                src="./problem-legal-sanction.jpg" 
+                                                alt="Official Corporation Sanctioned Architecture and Bank Approved Legal Deeds" 
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                            
+                                            {/* Outdated Problem Badge */}
+                                            <div className="absolute top-3 left-3 bg-red-500/25 border border-red-500/50 text-red-300 text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1 shadow-md">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
+                                                <span>Common Pain: Loan Rejection</span>
+                                            </div>
+
+                                            <div className="absolute bottom-2.5 left-3 text-gold-300 text-[11px] font-mono tracking-wider font-bold">
+                                                100% LEGAL SANCTION
+                                            </div>
+                                        </div>
+
+                                        {/* Card Body */}
+                                        <div className="p-5 sm:p-6 space-y-3">
+                                            <h3 className="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">
+                                                Legal Title & Sanction Uncertainty
+                                            </h3>
+                                            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+                                                Purchasing unsanctioned buildings risks municipal notices, loan denials from nationalized banks, and uncertain resale appreciation.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <h3 className="font-serif text-2xl font-bold text-white mb-3">
-                                        Legal Title Uncertainty
-                                    </h3>
-                                    <p className="text-slate-400 text-xs leading-relaxed font-light mb-6">
-                                        Buying unapproved properties risks bank loan rejections, municipal legal notices, and uncertain long-term resale value.
-                                    </p>
-                                    <div className="pt-4 border-t border-gold-400/15 text-xs text-gold-300 font-semibold flex items-center space-x-2">
-                                        <span className="text-gold-400 font-bold">✦ Heritage Fix:</span>
-                                        <span>100% Corporation Sanctioned</span>
+
+                                    {/* Heritage Fix Box */}
+                                    <div className="p-5 sm:p-6 pt-0">
+                                        <div className="p-3.5 rounded-xl bg-gold-400/10 border border-gold-400/30 text-xs space-y-2">
+                                            <div className="font-bold flex items-center justify-between text-gold-300">
+                                                <span>🏛️ Heritage Engineering:</span>
+                                                <span className="text-[10px] bg-gold-400 text-obsidian-950 px-2 py-0.5 rounded font-extrabold">SANCTIONED</span>
+                                            </div>
+                                            <ul className="space-y-1 text-[11px] text-slate-300 font-light">
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-gold-400">✓</span>
+                                                    <span>100% Corporation Sanctioned Plans</span>
+                                                </li>
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-gold-400">✓</span>
+                                                    <span>Pre-Approved Home Loans (SBI, HDFC)</span>
+                                                </li>
+                                                <li className="flex items-center space-x-1.5">
+                                                    <span className="text-gold-400">✓</span>
+                                                    <span>Clear Search Reports & Legally Safe</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
 

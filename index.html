@@ -379,31 +379,22 @@
                                 </p>
                             </div>
 
-                            {/* 2. Fixed Thumbnail Size (Positioned below description) */}
+                            {/* 2. Uncropped 16:9 Hero Image (Single Clean Badge) */}
                             <div className="w-full max-w-md sm:max-w-xl rounded-2xl p-0.5 sm:p-1 gold-button-gradient shadow-2xl gold-border-glow group relative">
-                                <div className="relative h-36 sm:h-52 lg:h-60 w-full rounded-xl overflow-hidden bg-obsidian-950 flex items-center justify-center">
+                                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-obsidian-950 flex items-center justify-center">
                                     <img 
                                         src="./hero-tower.jpg" 
                                         alt="Er. Irfan Group Luxury High-Rise Residences Malegaon" 
-                                        className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                        className="w-full h-full object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                                     />
                                     
                                     {/* Subtle Ambient Vignette Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-obsidian-950/40 pointer-events-none"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/40 via-transparent to-black/30 pointer-events-none"></div>
 
-                                    {/* Glass Overlay Badges */}
-                                    <div className="absolute top-2.5 left-2.5 glass-obsidian px-2.5 py-1 rounded-lg border border-gold-400/40 text-gold-300 text-xs font-semibold flex items-center space-x-1.5 shadow-md">
-                                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                        <span>25-Yr Zero Lift Bill</span>
-                                    </div>
-
-                                    <div className="absolute top-2.5 right-2.5 glass-obsidian px-2.5 py-1 rounded-lg border border-emerald-500/40 text-emerald-400 text-xs font-semibold flex items-center space-x-1 shadow-md">
-                                        <span>✓ 100% Corp Sanctioned</span>
-                                    </div>
-
-                                    <div className="absolute bottom-2 left-2.5 right-2.5 glass-obsidian px-3 py-1.5 rounded-lg border border-gold-400/30 flex items-center justify-between text-xs">
-                                        <span className="text-white font-serif font-bold truncate">Hawwa Tower & Luxury Residencies</span>
-                                        <span className="text-gold-300 font-semibold shrink-0">100ft DP Road</span>
+                                    {/* Single Clean Floating Badge */}
+                                    <div className="absolute top-2.5 right-2.5 glass-obsidian px-3 py-1 rounded-full border border-emerald-500/50 text-emerald-400 text-[11px] sm:text-xs font-semibold flex items-center space-x-1.5 shadow-lg backdrop-blur-md">
+                                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                        <span>100% Sanctioned</span>
                                     </div>
                                 </div>
                             </div>
@@ -987,26 +978,44 @@
                                 
                                 {/* Hawwa Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'hawwa') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group">
+                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
                                         <div>
-                                            <div className="relative h-48 bg-obsidian-950 flex items-center justify-center p-4 border-b border-gold-400/20">
-                                                <div className="text-center">
-                                                    <span className="text-gold-400 text-[10px] font-bold uppercase tracking-widest">100ft Road Access</span>
-                                                    <h3 className="font-serif text-2xl font-bold text-white mt-1">Hawwa Tower</h3>
-                                                    <span className="text-slate-400 text-xs mt-1 block">Opposite Hawwa Masjid</span>
+                                            {/* Image Banner */}
+                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                                <img 
+                                                    src="./FlagshipDevelopments/Hawwa_Tower.jpg" 
+                                                    alt="Hawwa Tower Luxury Residential and Commercial Complex" 
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                
+                                                {/* Top Badges */}
+                                                <div className="absolute top-3 left-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    100FT ROAD FRONT
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-gold-400/20 text-gold-300 border border-gold-400/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                                                    Private Terrace Units
+                                                <div className="absolute top-3 right-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    TERRACE SUITES
+                                                </div>
+                                                
+                                                {/* Title Overlay */}
+                                                <div className="absolute bottom-3 left-4 right-4">
+                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Hawwa Tower</h3>
+                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                        <span>📍</span>
+                                                        <span>Opposite Hawwa Masjid, 100ft Road</span>
+                                                    </span>
                                                 </div>
                                             </div>
+
+                                            {/* Card Content */}
                                             <div className="p-6 space-y-3">
-                                                <p className="text-slate-300 text-xs leading-relaxed font-light">
-                                                    High-rise luxury featuring attached private sky terrace gardens ranging from <span className="text-gold-300 font-semibold">100 to 550+ sq.ft.</span> connected to select suites.
+                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                                    High-rise luxury featuring ground-floor commercial showrooms and attached private sky terrace gardens ranging from <span className="text-gold-300 font-semibold">100 to 550+ sq.ft.</span>
                                                 </p>
-                                                <ul className="text-xs text-slate-400 space-y-2 pt-2 border-t border-gold-400/15">
-                                                    <li className="flex items-center">✓ Opp. Hawwa Masjid</li>
-                                                    <li className="flex items-center">✓ Direct 100ft Main Road Access</li>
-                                                    <li className="flex items-center">✓ Smart Solar Elevator Integrated</li>
+                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
+                                                    <li className="flex items-center text-emerald-300">✓ Ground Showrooms + Sky Terraces</li>
+                                                    <li className="flex items-center">✓ Opp. Hawwa Masjid, 100ft Main Road</li>
+                                                    <li className="flex items-center">✓ 25-Yr Solar Net-Zero Elevator</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1015,7 +1024,7 @@
                                                 href="https://wa.me/919823000000?text=Hello%20Er.%20Irfan%20Group,%20I%20am%20inquiring%20about%20Hawwa%20Tower"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30"
+                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
                                             >
                                                 Inquire Hawwa Tower
                                             </a>
@@ -1025,26 +1034,44 @@
 
                                 {/* Makka Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'makka') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group">
+                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
                                         <div>
-                                            <div className="relative h-48 bg-obsidian-950 flex items-center justify-center p-4 border-b border-gold-400/20">
-                                                <div className="text-center">
-                                                    <span className="text-gold-400 text-[10px] font-bold uppercase tracking-widest">Spiritual Hub</span>
-                                                    <h3 className="font-serif text-2xl font-bold text-white mt-1">Makka Tower</h3>
-                                                    <span className="text-slate-400 text-xs mt-1 block">Opposite Makkah Masjid</span>
+                                            {/* Image Banner */}
+                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                                <img 
+                                                    src="./FlagshipDevelopments/Makka_Tower.jpg" 
+                                                    alt="Makka Tower Spiritual Hub Residences" 
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                
+                                                {/* Top Badges */}
+                                                <div className="absolute top-3 left-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    SPIRITUAL HUB
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                                                    Reserved Parking
+                                                <div className="absolute top-3 right-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    RESERVED PARKING
+                                                </div>
+                                                
+                                                {/* Title Overlay */}
+                                                <div className="absolute bottom-3 left-4 right-4">
+                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Makka Tower</h3>
+                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                        <span>📍</span>
+                                                        <span>Opposite Makkah Masjid</span>
+                                                    </span>
                                                 </div>
                                             </div>
+
+                                            {/* Card Content */}
                                             <div className="p-6 space-y-3">
-                                                <p className="text-slate-300 text-xs leading-relaxed font-light">
-                                                    Prime strategic location situated directly opposite Makkah Masjid with covered basement parking and zero-electricity solar elevators.
+                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                                    Prime strategic location situated directly opposite Makkah Masjid with covered basement parking bays and zero-electricity solar elevators.
                                                 </p>
-                                                <ul className="text-xs text-slate-400 space-y-2 pt-2 border-t border-gold-400/15">
-                                                    <li className="flex items-center">✓ Directly Opp. Makkah Masjid</li>
+                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
+                                                    <li className="flex items-center text-emerald-300">✓ Directly Opp. Makkah Masjid</li>
                                                     <li className="flex items-center">✓ Covered Reserved Basement Bays</li>
-                                                    <li className="flex items-center">✓ Dual Water Municipal Connection</li>
+                                                    <li className="flex items-center">✓ Dual Water Municipal Redundancy</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1053,7 +1080,7 @@
                                                 href="https://wa.me/919823000000?text=Hello%20Er.%20Irfan%20Group,%20I%20am%20inquiring%20about%20Makka%20Tower"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30"
+                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
                                             >
                                                 Inquire Makka Tower
                                             </a>
@@ -1063,26 +1090,44 @@
 
                                 {/* Mohammad Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'mohammad') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group">
+                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
                                         <div>
-                                            <div className="relative h-48 bg-obsidian-950 flex items-center justify-center p-4 border-b border-gold-400/20">
-                                                <div className="text-center">
-                                                    <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Peaceful Living</span>
-                                                    <h3 className="font-serif text-2xl font-bold text-white mt-1">Mohammad Tower</h3>
-                                                    <span className="text-slate-400 text-xs mt-1 block">Near Hazrat Ji Masjid</span>
+                                            {/* Image Banner */}
+                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                                <img 
+                                                    src="./FlagshipDevelopments/Mohammad_Tower.jpg" 
+                                                    alt="Mohammad Tower Peaceful Living Enclave" 
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                
+                                                {/* Top Badges */}
+                                                <div className="absolute top-3 left-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    PEACEFUL ENCLAVE
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-gold-400/20 text-gold-300 border border-gold-400/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                                                    Quiet Enclave
+                                                <div className="absolute top-3 right-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    QUIET LIVING
+                                                </div>
+                                                
+                                                {/* Title Overlay */}
+                                                <div className="absolute bottom-3 left-4 right-4">
+                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Mohammad Tower</h3>
+                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                        <span>📍</span>
+                                                        <span>Near Hazrat Ji Masjid</span>
+                                                    </span>
                                                 </div>
                                             </div>
+
+                                            {/* Card Content */}
                                             <div className="p-6 space-y-3">
-                                                <p className="text-slate-300 text-xs leading-relaxed font-light">
-                                                    Nestled in a serene residential zone near Hazrat Ji Masjid. Designed for maximum light, natural breeze, and peaceful family living.
+                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                                    Nestled in a serene residential zone near Hazrat Ji Masjid. Engineered for maximum natural ventilation, sunlight, and quiet family living.
                                                 </p>
-                                                <ul className="text-xs text-slate-400 space-y-2 pt-2 border-t border-gold-400/15">
-                                                    <li className="flex items-center">✓ Low-Noise Residential Zone</li>
+                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
+                                                    <li className="flex items-center text-emerald-300">✓ Low-Noise Serene Residential Zone</li>
                                                     <li className="flex items-center">✓ Near Hazrat Ji Masjid</li>
-                                                    <li className="flex items-center">✓ 24/7 HD Security Monitoring</li>
+                                                    <li className="flex items-center">✓ 24/7 HD Security & CCTV Monitoring</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1091,7 +1136,7 @@
                                                 href="https://wa.me/919823000000?text=Hello%20Er.%20Irfan%20Group,%20I%20am%20inquiring%20about%20Mohammad%20Tower"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30"
+                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
                                             >
                                                 Inquire Mohammad Tower
                                             </a>
@@ -1101,25 +1146,43 @@
 
                                 {/* Millat Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'millat') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group">
+                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
                                         <div>
-                                            <div className="relative h-48 bg-obsidian-950 flex items-center justify-center p-4 border-b border-gold-400/20">
-                                                <div className="text-center">
-                                                    <span className="text-gold-400 text-[10px] font-bold uppercase tracking-widest">Educational Hub</span>
-                                                    <h3 className="font-serif text-2xl font-bold text-white mt-1">Millat Tower</h3>
-                                                    <span className="text-slate-400 text-xs mt-1 block">Near Millat Madrasa & Gulshan School</span>
+                                            {/* Image Banner */}
+                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                                <img 
+                                                    src="./FlagshipDevelopments/Millat_Tower.jpg" 
+                                                    alt="Millat Tower Educational Hub Residences" 
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                
+                                                {/* Top Badges */}
+                                                <div className="absolute top-3 left-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    EDUCATIONAL HUB
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                                                    Smart Solar Lift
+                                                <div className="absolute top-3 right-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                    SOLAR ELEVATOR
+                                                </div>
+                                                
+                                                {/* Title Overlay */}
+                                                <div className="absolute bottom-3 left-4 right-4">
+                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Millat Tower</h3>
+                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                        <span>📍</span>
+                                                        <span>Near Millat Madrasa & Gulshan School</span>
+                                                    </span>
                                                 </div>
                                             </div>
+
+                                            {/* Card Content */}
                                             <div className="p-6 space-y-3">
-                                                <p className="text-slate-300 text-xs leading-relaxed font-light">
-                                                    Located adjacent to top educational institutes including Millat Madrasa and Gulshan School, equipped with high-speed smart solar elevators.
+                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                                    Located adjacent to premier educational institutions with seamless family connectivity and high-speed smart solar elevators.
                                                 </p>
-                                                <ul className="text-xs text-slate-400 space-y-2 pt-2 border-t border-gold-400/15">
-                                                    <li className="flex items-center">✓ Near Millat Madrasa</li>
-                                                    <li className="flex items-center">✓ Near Gulshan School</li>
+                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
+                                                    <li className="flex items-center text-emerald-300">✓ Near Millat Madrasa & Gulshan School</li>
+                                                    <li className="flex items-center">✓ 100% Sanctioned Title Documents</li>
                                                     <li className="flex items-center">✓ Smart Solar Lift System</li>
                                                 </ul>
                                             </div>
@@ -1129,7 +1192,7 @@
                                                 href="https://wa.me/919823000000?text=Hello%20Er.%20Irfan%20Group,%20I%20am%20inquiring%20about%20Millat%20Tower"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30"
+                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
                                             >
                                                 Inquire Millat Tower
                                             </a>

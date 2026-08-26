@@ -1,0 +1,41 @@
+{
+  "popup_theme": {
+    "themeMode": "dark",
+    "primaryColor": "#D4AF37"
+  },
+  "survey_questions": [
+    {
+      "id": "q1",
+      "label": "Which Residence Configuration Are You Looking For?",
+      "options": [
+        "Smart 1 BHK Suite",
+        "Spacious 2 BHK Family Residence",
+        "Hawwa Tower Private Sky Terrace Edition",
+        "Ground Floor Commercial Showroom"
+      ],
+      "allowMultiple": false
+    },
+    {
+      "id": "q2",
+      "label": "What Is Your Planned Purchase Timeline?",
+      "options": [
+        "Ready to Book Immediately",
+        "Within the Next 1 to 3 Months",
+        "Exploring for Investment & Rental Yield",
+        "Planning Nationalized Bank Loan Financing"
+      ],
+      "allowMultiple": false
+    },
+    {
+      "id": "q3",
+      "label": "Which Tower Location Suits You Best?",
+      "options": [
+        "Hawwa Tower (100ft DP Ring Road Frontage)",
+        "Makka Tower (Directly Opposite Makkah Masjid)",
+        "Mohammad Tower (Peaceful Golden Nagar Enclave)",
+        "Millat Tower (Near Millat Madrasa & Gulshan School)"
+      ],
+      "allowMultiple": false
+    }
+  ]
+}

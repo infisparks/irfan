@@ -8,10 +8,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
     
     <!-- React & ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
@@ -25,43 +25,39 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: {
-                            50: '#fdfbf7',
-                            100: '#f8f1e5',
-                            200: '#eedfbe',
-                            300: '#e1c88e',
-                            400: '#d4af37', // Regal Gold Primary
-                            500: '#c5a028',
-                            600: '#a6811c',
-                            700: '#856119',
-                            800: '#6f4e1b',
-                            900: '#5c401b',
-                            goldLight: '#F5E08B',
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1', // Primary Indigo
+                            600: '#4f46e5', // Deep Indigo Accent
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                            950: '#1e1b4b',
                         },
-                        emeraldDeep: {
-                            950: '#021812',
-                            900: '#042e23',
-                            800: '#064e3b',
-                            700: '#0f766e',
+                        amberGlow: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        emeraldGlow: {
                             400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
                         },
-                        obsidian: {
-                            950: '#070a0f',
-                            900: '#0b0f17',
-                            850: '#111827',
-                            800: '#1a2234',
-                            700: '#263147',
-                            600: '#374151',
-                        },
-                        ivory: {
-                            50: '#fcfbf7',
-                            100: '#f6f3eb',
-                            200: '#e8e2d2',
+                        midnight: {
+                            800: '#111827',
+                            850: '#0f172a',
+                            900: '#0b0f19',
+                            950: '#070a12',
                         }
                     },
                     fontFamily: {
-                        serif: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Poppins"', 'sans-serif'],
+                        serif: ['"Poppins"', 'sans-serif'],
                     },
                     animation: {
                         'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -80,58 +76,66 @@
 
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #070a0f;
-            color: #f1f5f9;
+            font-family: 'Poppins', sans-serif;
+            background-color: #070a12;
+            color: #f8fafc;
             overflow-x: hidden;
         }
-        .font-serif {
-            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-        }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #9A7B38 100%);
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #C7D2FE 45%, #818CF8 80%, #C084FC 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border-glow {
-            box-shadow: 0 0 30px -5px rgba(212, 175, 55, 0.22);
+        .amber-gradient-text {
+            background: linear-gradient(135deg, #FEF08A 0%, #F59E0B 60%, #D97706 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .gold-button-gradient {
-            background: linear-gradient(135deg, #EAD07C 0%, #D4AF37 50%, #B08B26 100%);
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 50%, #7C3AED 100%);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .gold-button-gradient:hover {
-            background: linear-gradient(135deg, #F3E5AB 0%, #E5C158 50%, #C5A028 100%);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+        .btn-primary-gradient:hover {
+            background: linear-gradient(135deg, #818CF8 0%, #6366F1 50%, #8B5CF6 100%);
+            box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.5);
         }
-        .glass-obsidian {
-            background: rgba(17, 24, 39, 0.75);
+        .btn-amber-gradient {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-amber-gradient:hover {
+            background: linear-gradient(135deg, #FDE68A 0%, #FBBF24 50%, #F59E0B 100%);
+            box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.45);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.18);
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
-        .glass-gold-card {
-            background: linear-gradient(180deg, rgba(26, 34, 52, 0.85) 0%, rgba(11, 15, 23, 0.95) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+        .glass-card-modern {
+            background: linear-gradient(180deg, rgba(30, 27, 75, 0.4) 0%, rgba(11, 15, 25, 0.85) 100%);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(99, 102, 241, 0.18);
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .glass-gold-card:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.25);
+        .glass-card-modern:hover {
+            border-color: rgba(129, 140, 248, 0.45);
+            box-shadow: 0 12px 35px -10px rgba(99, 102, 241, 0.25);
         }
-        @keyframes shimmer {
+        @keyframes shimmerModern {
             0% { background-position: -200% 0; }
             100% { background-position: 200% 0; }
         }
-        .shimmer-badge {
-            background: linear-gradient(90deg, rgba(212, 175, 55, 0.12) 0%, rgba(245, 224, 139, 0.35) 50%, rgba(212, 175, 55, 0.12) 100%);
+        .shimmer-badge-modern {
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.12) 0%, rgba(165, 180, 252, 0.28) 50%, rgba(99, 102, 241, 0.12) 100%);
             background-size: 200% 100%;
-            animation: shimmer 3.5s infinite;
+            animation: shimmerModern 3.5s infinite;
         }
-        .gold-border-glow-lg {
-            box-shadow: 0 0 35px -5px rgba(212, 175, 55, 0.28), 0 0 15px -3px rgba(212, 175, 55, 0.15);
+        .glow-indigo-box {
+            box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.3), 0 0 15px -3px rgba(124, 58, 237, 0.2);
         }
         .shine-effect {
             position: relative;
@@ -147,7 +151,7 @@
             background: linear-gradient(
                 60deg,
                 transparent,
-                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.25),
                 transparent
             );
             transform: rotate(30deg) translateY(-120%);
@@ -162,15 +166,15 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #070a0f;
+            background: #070a12;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1a2234;
+            background: #1e1b4b;
             border-radius: 4px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
+            background: #6366f1;
         }
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -181,7 +185,7 @@
         }
     </style>
 </head>
-<body class="bg-obsidian-950 text-slate-100 antialiased selection:bg-gold-400 selection:text-obsidian-950">
+<body class="bg-midnight-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
 
     <div id="root"></div>
 
@@ -189,31 +193,31 @@
         const { useState, useEffect } = React;
 
         const CrownIcon = () => (
-            <svg className="w-4 h-4 text-gold-400" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="w-4 h-4 text-amberGlow-400" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
             </svg>
         );
 
         const SunSolarIcon = () => (
-            <svg className="w-6 h-6 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            <svg className="w-5 h-5 text-amberGlow-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
         );
 
         const ShieldGoldIcon = () => (
-            <svg className="w-6 h-6 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <svg className="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
         );
 
         const WaterEmeraldIcon = () => (
-            <svg className="w-6 h-6 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M20 14c0 4.418-3.582 8-8 8s-8-3.582-8-8c0-5 8-12 8-12s8 7 8 12z" />
+            <svg className="w-5 h-5 text-emeraldGlow-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 14c0 4.418-3.582 8-8 8s-8-3.582-8-8c0-5 8-12 8-12s8 7 8 12z" />
             </svg>
         );
 
         const CheckBadgeIcon = () => (
-            <svg className="w-4 h-4 text-gold-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4 text-emeraldGlow-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
         );
@@ -283,70 +287,68 @@
             const totalSolarSavings = Math.round(estimatedMonthlyBill * 300); // 25 years = 300 months
 
             return (
-                <div className="min-h-screen flex flex-col bg-obsidian-950 text-slate-100 selection:bg-gold-400 selection:text-obsidian-950 relative">
+                <div className="min-h-screen flex flex-col bg-midnight-950 text-slate-100 selection:bg-brand-500 selection:text-white relative font-sans">
                     
-                    {}
                     {toastMessage && (
-                        <div className="fixed top-24 right-4 z-50 glass-obsidian px-5 py-3 rounded-xl border border-gold-400/40 text-gold-300 text-xs sm:text-sm font-semibold shadow-2xl animate-bounce flex items-center space-x-2">
+                        <div className="fixed top-20 right-4 z-50 glass-dark px-5 py-3 rounded-xl border border-brand-400/40 text-brand-200 text-xs sm:text-sm font-semibold shadow-2xl animate-bounce flex items-center space-x-2">
                             <span>✨</span>
                             <span>{toastMessage}</span>
                         </div>
                     )}
 
-
-
-                    {/* TOP ACTION HEADER - BIG SINGLE VIP BUTTON */}
-                    <header className="sticky top-0 z-50 w-full bg-obsidian-950/95 backdrop-blur-md border-b border-gold-400/25 px-4 py-3 sm:py-3.5 shadow-2xl flex items-center justify-center">
+                    {/* TOP ACTION HEADER - SINGLE ROW VIP BUTTON */}
+                    <header className="sticky top-0 z-50 w-full bg-midnight-950/95 backdrop-blur-md border-b border-slate-800/80 px-2 sm:px-4 py-2 sm:py-3 shadow-xl flex items-center justify-center">
                         <div className="max-w-4xl w-full flex items-center justify-center">
                             <a 
                                 href="#projects" 
-                                className="w-full sm:w-auto sm:min-w-[420px] py-3.5 sm:py-4 px-6 sm:px-8 rounded-xl gold-button-gradient text-obsidian-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-xl hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-2 text-center shine-effect"
+                                className="w-full sm:w-auto sm:min-w-[420px] py-2.5 sm:py-3.5 px-3 min-[370px]:px-4 sm:px-8 rounded-xl btn-primary-gradient text-white font-extrabold text-[11px] min-[360px]:text-xs sm:text-sm md:text-base tracking-normal sm:tracking-wider uppercase transition-all shadow-lg hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-1.5 sm:space-x-2.5 text-center shine-effect whitespace-nowrap"
                             >
-                                <span className="text-base sm:text-lg">🎟️</span>
-                                <span>CLAIM VIP SITE VISIT & PRICING PASS</span>
-                                <svg className="w-4 h-4 text-obsidian-950 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span className="text-sm sm:text-lg shrink-0">🎟️</span>
+                                <span className="whitespace-nowrap">CLAIM VIP SITE VISIT & PRICING PASS</span>
+                                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </a>
                         </div>
                     </header>
 
-                    {/* HERO SECTION - COMPACT, ULTRA-PREMIUM & RESPONSIVE */}
-                    <section id="hero" className="relative min-h-[calc(100dvh-4rem)] flex flex-col justify-between items-center text-center px-4 sm:px-6 lg:px-8 py-4 sm:py-8 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-obsidian-850 via-obsidian-900 to-obsidian-950 text-white">
+                    {/* HERO SECTION - HIGH IMPACT, ULTRA-CLEAN & MOBILE HEIGHT OPTIMIZED */}
+                    <section id="hero" className="relative min-h-[calc(100svh-4rem)] flex flex-col justify-between items-center text-center px-4 sm:px-6 lg:px-8 py-3 sm:py-6 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-midnight-850 via-midnight-900 to-midnight-950 text-white overflow-hidden">
                         
-                        {/* Golden Solar Radial Background Mesh & Ambient Glow */}
-                        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none"></div>
-                        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 sm:w-96 h-80 sm:h-96 bg-gold-400/10 blur-[100px] rounded-full pointer-events-none"></div>
+                        {/* Ambient Royal Indigo & Solar Glow Elements */}
+                        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+                        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-brand-600/15 blur-[100px] rounded-full pointer-events-none"></div>
+                        <div className="absolute top-10 right-1/4 w-48 h-48 bg-amberGlow-500/10 blur-[80px] rounded-full pointer-events-none"></div>
 
-                        <div className="relative z-10 max-w-4xl mx-auto w-full flex flex-col items-center justify-between h-full my-auto gap-3 sm:gap-5">
+                        <div className="relative z-10 max-w-4xl mx-auto w-full flex flex-col items-center justify-between flex-1 my-auto gap-3 sm:gap-4 py-1">
                             
-                            {/* 1. Header & Text Content */}
-                            <div className="flex flex-col items-center gap-2 sm:gap-2.5 w-full">
+                            {/* 1. Header & Text Content (BIG READABLE HEADLINE) */}
+                            <div className="flex flex-col items-center gap-2 sm:gap-3 w-full">
                                 
                                 {/* Single Line Top Hook Badge */}
-                                <div className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full glass-obsidian border border-gold-400/40 text-gold-300 text-[11px] sm:text-xs font-semibold uppercase tracking-wider shadow-lg max-w-full shimmer-badge">
-                                    <span className="text-gold-400 animate-pulse-subtle shrink-0">☀️</span>
-                                    <span className="truncate">25-Yr Solar • Zero Maintenance Luxury</span>
-                                    <span className="text-gold-400 shrink-0 hidden sm:inline">✦</span>
+                                <div className="inline-flex items-center space-x-2 px-3.5 sm:px-5 py-1.5 rounded-full glass-dark border border-brand-400/40 text-brand-200 text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-md max-w-full shimmer-badge-modern">
+                                    <span className="text-amberGlow-400 animate-pulse-subtle shrink-0">☀️</span>
+                                    <span className="truncate font-medium whitespace-nowrap">25-Yr Solar • Zero Maintenance Luxury</span>
+                                    <span className="text-brand-300 shrink-0 hidden sm:inline">✦</span>
                                 </div>
 
-                                {/* Main Headline */}
-                                <h1 className="font-serif text-[28px] sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight max-w-3xl px-1">
-                                    Luxury Beyond Standards. <br />
-                                    <span className="gold-gradient-text font-serif italic font-normal inline-block">
+                                {/* Main Headline - Enlarged & Highly Legible with Poppins */}
+                                <h1 className="font-sans font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.12] max-w-3xl px-1 text-white">
+                                    Luxury Living in Malegaon. <br />
+                                    <span className="hero-gradient-text inline-block">
                                         Zero Maintenance Anxiety.
                                     </span>
                                 </h1>
 
-                                {/* Description */}
-                                <p className="text-xs sm:text-sm lg:text-base text-slate-200/95 max-w-xl font-light leading-relaxed px-2">
-                                    Discover Malegaon’s most advanced residential developments with 100% Corporation Sanctioned titles, automated dual water security, and smart solar elevators.
+                                {/* Description - High Clarity & Bigger Font */}
+                                <p className="text-xs sm:text-base md:text-lg text-slate-200 max-w-xl font-normal leading-snug sm:leading-relaxed px-2">
+                                    Discover Malegaon’s premier high-rise residences with <span className="text-brand-200 font-bold">100% Corporation Sanctioned titles</span>, 25-Year net-zero solar elevators, and dual water security.
                                 </p>
                             </div>
 
                             {/* 2. Uncropped 16:9 Hero Image (Single Clean Badge) */}
-                            <div className="w-full max-w-md sm:max-w-xl rounded-2xl p-0.5 sm:p-1 gold-button-gradient shadow-2xl gold-border-glow group relative">
-                                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-obsidian-950 flex items-center justify-center">
+                            <div className="w-full max-w-[340px] sm:max-w-md lg:max-w-xl rounded-xl sm:rounded-2xl p-0.5 btn-primary-gradient shadow-2xl glow-indigo-box group relative">
+                                <div className="relative aspect-[16/9] w-full rounded-[10px] sm:rounded-xl overflow-hidden bg-midnight-950 flex items-center justify-center">
                                     <img 
                                         src="https://irfan-bay.vercel.app/hero-tower.jpg" 
                                         alt="Er. Irfan Group Luxury High-Rise Residences Malegaon" 
@@ -354,12 +356,12 @@
                                     />
                                     
                                     {/* Subtle Ambient Vignette Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/40 via-transparent to-black/30 pointer-events-none"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-midnight-950/60 via-transparent to-black/20 pointer-events-none"></div>
 
                                     {/* Single Clean Floating Badge */}
-                                    <div className="absolute top-2.5 right-2.5 glass-obsidian px-3 py-1 rounded-full border border-emerald-500/50 text-emerald-400 text-[11px] sm:text-xs font-semibold flex items-center space-x-1.5 shadow-lg backdrop-blur-md">
-                                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                        <span>100% Sanctioned</span>
+                                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 glass-dark px-3 py-1 rounded-full border border-emeraldGlow-500/50 text-emeraldGlow-300 text-xs sm:text-sm font-bold flex items-center space-x-1.5 shadow-lg backdrop-blur-md whitespace-nowrap">
+                                        <span className="w-2 h-2 rounded-full bg-emeraldGlow-400 animate-pulse shrink-0"></span>
+                                        <span className="whitespace-nowrap">100% Sanctioned</span>
                                     </div>
                                 </div>
                             </div>
@@ -368,108 +370,109 @@
                             <div className="flex flex-col gap-2 w-full max-w-md justify-center px-1">
                                 <a 
                                     href="#projects" 
-                                    className="w-full py-3.5 px-6 rounded-xl gold-button-gradient text-obsidian-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase transition-all hover:scale-[1.02] shadow-xl shadow-gold-400/25 flex items-center justify-center space-x-2 shine-effect"
+                                    className="w-full py-3.5 sm:py-4 px-6 rounded-xl btn-primary-gradient text-white font-extrabold text-sm sm:text-base md:text-lg tracking-wider uppercase transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-brand-500/30 flex items-center justify-center space-x-2 shine-effect whitespace-nowrap"
                                 >
                                     <span>Schedule VIP Site Visit</span>
-                                    <svg className="w-4 h-4 text-obsidian-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
                                 </a>
                                 
-                                <div className="flex items-center justify-center space-x-4 text-xs pt-0.5">
-                                    <a 
-                                        href="#solution" 
-                                        className="text-gold-300 hover:text-gold-200 transition-colors font-medium flex items-center space-x-1"
+                                <div className="flex items-center justify-center space-x-4 text-xs sm:text-sm pt-0.5">
+                                    <button 
+                                        onClick={() => setCalculationModalOpen(true)}
+                                        className="text-brand-300 hover:text-brand-200 transition-colors font-semibold flex items-center space-x-1 whitespace-nowrap"
                                     >
                                         <span>⚡ 25-Yr Solar ROI Calculator</span>
                                         <span>↓</span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 
-                            {/* 4. Trust Badge Strip (Non-Cropping & Responsive Wrap) */}
-                            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 sm:gap-8 text-[11px] sm:text-xs text-slate-300 border-t border-gold-400/20 w-full max-w-2xl pt-2.5 px-2">
-                                <div className="flex items-center space-x-1 sm:space-x-1.5 shrink-0">
+                            {/* 4. Trust Badge Strip (Compact & Clean) */}
+                            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 sm:gap-8 text-xs sm:text-sm text-slate-200 border-t border-brand-500/20 w-full max-w-2xl pt-2 sm:pt-3 px-2 font-medium">
+                                <div className="flex items-center space-x-1.5 shrink-0 whitespace-nowrap">
                                     <CheckBadgeIcon />
-                                    <span>Corp Approved Title</span>
+                                    <span className="whitespace-nowrap">Corp Approved Title</span>
                                 </div>
-                                <div className="flex items-center space-x-1 sm:space-x-1.5 shrink-0">
+                                <div className="flex items-center space-x-1.5 shrink-0 whitespace-nowrap">
                                     <CheckBadgeIcon />
-                                    <span>Zero Lift Maintenance</span>
+                                    <span className="whitespace-nowrap">Zero Lift Maintenance</span>
                                 </div>
-                                <div className="flex items-center space-x-1 sm:space-x-1.5 shrink-0">
+                                <div className="flex items-center space-x-1.5 shrink-0 whitespace-nowrap">
                                     <CheckBadgeIcon />
-                                    <span>Dual Water Security</span>
+                                    <span className="whitespace-nowrap">Dual Water Security</span>
                                 </div>
                             </div>
 
                         </div>
                     </section>
 
-                    {/* MALEGAON REALITY CHECK SECTION - ULTRA-PROFESSIONAL & MOBILE SLIDABLE */}
-                    <section id="problem" className="py-16 sm:py-24 bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950 text-white relative border-t border-gold-400/20 overflow-hidden">
+                    {/* PROBLEM VS HERITAGE SOLUTION */}
+                    <section id="reality-check" className="py-16 sm:py-24 bg-midnight-950 text-white relative border-t border-slate-800/80 overflow-hidden">
                         
-                        {/* Ambient Gold Glow Elements */}
-                        <div className="absolute top-0 right-1/4 w-72 h-72 bg-gold-400/5 blur-[120px] rounded-full pointer-events-none"></div>
-                        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+                        {/* Ambient Radial Background Glows */}
+                        <div className="absolute top-1/2 -left-24 w-80 h-80 bg-brand-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute top-1/2 -right-24 w-80 h-80 bg-emeraldGlow-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                             
                             {/* Section Header */}
-                            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-                                <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-obsidian border border-gold-400/30 text-gold-300 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3.5 shimmer-badge">
-                                    <span className="text-gold-400">⚡</span>
-                                    <span>The Malegaon Reality Check</span>
+                            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                                <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-dark border border-brand-400/30 text-brand-200 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3 shimmer-badge-modern">
+                                    <span className="text-amberGlow-400">🛡️</span>
+                                    <span>Malegaon Reality Check</span>
                                 </div>
-                                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                                    Stop Settling for Outdated Living Standards.
+                                <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight">
+                                    The Old Building Hassles. <br className="hidden sm:inline" />
+                                    <span className="text-brand-300">Engineered Out Forever.</span>
                                 </h2>
-                                <p className="text-slate-200/95 mt-3.5 sm:mt-4 text-sm sm:text-base lg:text-lg leading-relaxed font-light px-2">
-                                    Traditional buildings in Malegaon often suffer from recurring lift bill disputes, seasonal dry borings, and unapproved title risks. Er. Irfan Group engineered bulletproof solutions for each:
+                                <p className="text-slate-200 mt-3 text-sm sm:text-lg leading-relaxed font-normal px-2">
+                                    Most buyers face three recurring headaches in ordinary apartments. Here is how Er. Irfan Group eliminates every single one.
                                 </p>
                             </div>
 
-                            {/* Mobile Swipe Guidance Hint */}
-                            <div className="flex md:hidden items-center justify-between px-2 mb-3 text-xs text-gold-300/95 font-medium">
-                                <span className="flex items-center space-x-1.5 animate-pulse-subtle">
-                                    <span>👉</span>
-                                    <span>Swipe horizontally to view all 3 fixes</span>
+                            {/* Mobile Swipe Hint */}
+                            <div className="md:hidden flex items-center justify-between mb-3 px-1 text-xs text-slate-300">
+                                <span className="flex items-center space-x-1.5">
+                                    <span className="text-brand-400">👉</span>
+                                    <span>Swipe horizontally to view solutions</span>
                                 </span>
-                                <span className="text-slate-400 font-mono text-[11px]">1 / 3 Cards</span>
+                                <span className="text-slate-300 font-mono text-xs">1 / 3 Cards</span>
                             </div>
 
                             {/* 3 Interactive UX Problem & Solution Cards - Mobile Slidable Carousel */}
-                            <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 pt-1 px-2 -mx-2 sm:mx-0 sm:px-0">
+                            <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 pt-1 px-2 -mx-2 sm:mx-0 sm:px-0">
                                 
                                 {/* Card 1: Maintenance Disputes -> 25-Yr Free Solar Lift */}
-                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-xl transition-all duration-300">
+                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-card-modern rounded-2xl overflow-hidden flex flex-col justify-between group border border-slate-800 hover:border-brand-500/50 shadow-xl transition-all duration-300">
                                     <div>
                                         {/* Image Banner */}
-                                        <div className="relative h-44 sm:h-52 overflow-hidden bg-obsidian-950">
+                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-midnight-950">
                                             <img 
                                                 src="https://irfan-bay.vercel.app/problem-solar-elevator.jpg" 
                                                 alt="Solar Powered Net Zero Luxury Elevator Lobby" 
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                             
                                             {/* Outdated Problem Badge */}
-                                            <div className="absolute top-3 left-3 bg-red-500/25 border border-red-500/50 text-red-300 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1 shadow-md">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
-                                                <span>Common Pain: Stalled Lifts</span>
+                                            <div className="absolute top-3 left-3 bg-red-500/30 border border-red-500/50 text-red-100 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md whitespace-nowrap">
+                                                <span className="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+                                                <span className="whitespace-nowrap">Common Pain: Stalled Lifts</span>
                                             </div>
 
-                                            <div className="absolute bottom-2.5 left-3 text-gold-300 text-xs font-mono tracking-wider font-bold">
+                                            <div className="absolute bottom-3 left-3 text-amberGlow-400 text-xs sm:text-sm font-mono tracking-wider font-bold whitespace-nowrap">
                                                 ZERO LIFT BILL SYSTEM
                                             </div>
                                         </div>
 
                                         {/* Card Body */}
                                         <div className="p-5 sm:p-6 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-gold-200 transition-colors leading-snug">
+                                            <h3 className="font-sans text-xl sm:text-2xl font-bold text-white group-hover:text-brand-200 transition-colors leading-snug">
                                                 Unpredictable Lift Bill Disputes
                                             </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
+                                            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                                 Unpaid corridor and elevator electricity bills routinely shut down elevators for weeks, creating severe distress for elderly relatives and unlit hallways.
                                             </p>
                                         </div>
@@ -477,22 +480,22 @@
 
                                     {/* Heritage Fix Box */}
                                     <div className="p-5 sm:p-6 pt-0">
-                                        <div className="p-3.5 rounded-xl bg-gold-400/10 border border-gold-400/30 text-xs sm:text-sm space-y-2.5">
-                                            <div className="font-bold flex items-center justify-between text-gold-300">
-                                                <span>☀️ Heritage Engineering:</span>
-                                                <span className="text-[11px] bg-gold-400 text-obsidian-950 px-2 py-0.5 rounded font-extrabold">25-YR FREE</span>
+                                        <div className="p-4 rounded-xl bg-brand-950/70 border border-brand-500/40 text-xs sm:text-sm space-y-3">
+                                            <div className="font-bold flex items-center justify-between text-brand-200 text-xs gap-1.5">
+                                                <span className="whitespace-nowrap">☀️ Heritage Solution:</span>
+                                                <span className="text-[11px] bg-amberGlow-500 text-midnight-950 px-2.5 py-0.5 rounded font-extrabold whitespace-nowrap shrink-0">25-YR FREE</span>
                                             </div>
-                                            <ul className="space-y-1.5 text-xs text-slate-200 font-light">
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-gold-400">✓</span>
+                                            <ul className="space-y-2 text-xs sm:text-sm text-slate-200 font-medium">
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-brand-400 font-bold">✓</span>
                                                     <span>Dedicated Solar Inverter for Lifts</span>
                                                 </li>
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-gold-400">✓</span>
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-brand-400 font-bold">✓</span>
                                                     <span>Zero Corridor Electric Assessments</span>
                                                 </li>
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-gold-400">✓</span>
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-brand-400 font-bold">✓</span>
                                                     <span>24/7 Uninterrupted Vertical Mobility</span>
                                                 </li>
                                             </ul>
@@ -501,34 +504,34 @@
                                 </div>
 
                                 {/* Card 2: Summer Water Scarcity -> Dual Boring + Municipal Line */}
-                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-emerald-500/25 hover:border-emerald-400/60 shadow-xl transition-all duration-300">
+                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-card-modern rounded-2xl overflow-hidden flex flex-col justify-between group border border-slate-800 hover:border-emeraldGlow-500/50 shadow-xl transition-all duration-300">
                                     <div>
                                         {/* Image Banner */}
-                                        <div className="relative h-44 sm:h-52 overflow-hidden bg-obsidian-950">
+                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-midnight-950">
                                             <img 
                                                 src="https://irfan-bay.vercel.app/problem-dual-water.jpg" 
                                                 alt="Automated High-Tech Water Utility Management Station" 
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                             
                                             {/* Outdated Problem Badge */}
-                                            <div className="absolute top-3 left-3 bg-red-500/25 border border-red-500/50 text-red-300 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1 shadow-md">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
-                                                <span>Common Pain: Summer Tankers</span>
+                                            <div className="absolute top-3 left-3 bg-red-500/30 border border-red-500/50 text-red-100 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md whitespace-nowrap">
+                                                <span className="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+                                                <span className="whitespace-nowrap">Common Pain: Summer Tankers</span>
                                             </div>
 
-                                            <div className="absolute bottom-2.5 left-3 text-emerald-300 text-xs font-mono tracking-wider font-bold">
+                                            <div className="absolute bottom-3 left-3 text-emeraldGlow-400 text-xs sm:text-sm font-mono tracking-wider font-bold whitespace-nowrap">
                                                 DUAL WATER REDUNDANCY
                                             </div>
                                         </div>
 
                                         {/* Card Body */}
                                         <div className="p-5 sm:p-6 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-emerald-200 transition-colors leading-snug">
+                                            <h3 className="font-sans text-xl sm:text-2xl font-bold text-white group-hover:text-emeraldGlow-200 transition-colors leading-snug">
                                                 Summer Water Scarcity & Stress
                                             </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
+                                            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                                 Single boring setups regularly run dry during peak summer months, forcing families to organize expensive, irregular private tanker deliveries.
                                             </p>
                                         </div>
@@ -536,22 +539,22 @@
 
                                     {/* Heritage Fix Box */}
                                     <div className="p-5 sm:p-6 pt-0">
-                                        <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm space-y-2.5">
-                                            <div className="font-bold flex items-center justify-between text-emerald-300">
-                                                <span>💧 Heritage Engineering:</span>
-                                                <span className="text-[11px] bg-emerald-400 text-obsidian-950 px-2 py-0.5 rounded font-extrabold">24/7 DUAL</span>
+                                        <div className="p-4 rounded-xl bg-emeraldGlow-950/50 border border-emeraldGlow-500/40 text-xs sm:text-sm space-y-3">
+                                            <div className="font-bold flex items-center justify-between text-emeraldGlow-300 text-xs gap-1.5">
+                                                <span className="whitespace-nowrap">💧 Heritage Solution:</span>
+                                                <span className="text-[11px] bg-emeraldGlow-500 text-midnight-950 px-2.5 py-0.5 rounded font-extrabold whitespace-nowrap shrink-0">24/7 DUAL</span>
                                             </div>
-                                            <ul className="space-y-1.5 text-xs text-slate-200 font-light">
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-emerald-400">✓</span>
+                                            <ul className="space-y-2 text-xs sm:text-sm text-slate-200 font-medium">
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-emeraldGlow-400 font-bold">✓</span>
                                                     <span>Dual Heavy Deep Yield Borings</span>
                                                 </li>
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-emerald-400">✓</span>
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-emeraldGlow-400 font-bold">✓</span>
                                                     <span>Municipal Sweet Drinking Water Line</span>
                                                 </li>
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-emerald-400">✓</span>
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-emeraldGlow-400 font-bold">✓</span>
                                                     <span>Automated Jalpari Sensor Pumping</span>
                                                 </li>
                                             </ul>
@@ -560,34 +563,34 @@
                                 </div>
 
                                 {/* Card 3: Legal Uncertainty -> 100% Corporation Sanctioned */}
-                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-gold-card rounded-2xl overflow-hidden flex flex-col justify-between group border border-gold-400/25 hover:border-gold-400/60 shadow-xl transition-all duration-300">
+                                <div className="w-[86vw] max-w-[340px] md:w-auto shrink-0 snap-center glass-card-modern rounded-2xl overflow-hidden flex flex-col justify-between group border border-slate-800 hover:border-brand-500/50 shadow-xl transition-all duration-300">
                                     <div>
                                         {/* Image Banner */}
-                                        <div className="relative h-44 sm:h-52 overflow-hidden bg-obsidian-950">
+                                        <div className="relative h-48 sm:h-56 overflow-hidden bg-midnight-950">
                                             <img 
                                                 src="https://irfan-bay.vercel.app/problem-legal-sanction.jpg" 
                                                 alt="Official Corporation Sanctioned Architecture and Bank Approved Legal Deeds" 
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                             
                                             {/* Outdated Problem Badge */}
-                                            <div className="absolute top-3 left-3 bg-red-500/25 border border-red-500/50 text-red-300 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1 shadow-md">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span>
-                                                <span>Common Pain: Loan Rejection</span>
+                                            <div className="absolute top-3 left-3 bg-red-500/30 border border-red-500/50 text-red-100 text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md whitespace-nowrap">
+                                                <span className="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+                                                <span className="whitespace-nowrap">Common Pain: Loan Rejection</span>
                                             </div>
 
-                                            <div className="absolute bottom-2.5 left-3 text-gold-300 text-xs font-mono tracking-wider font-bold">
+                                            <div className="absolute bottom-3 left-3 text-brand-300 text-xs sm:text-sm font-mono tracking-wider font-bold whitespace-nowrap">
                                                 100% LEGAL SANCTION
                                             </div>
                                         </div>
 
                                         {/* Card Body */}
                                         <div className="p-5 sm:p-6 space-y-3">
-                                            <h3 className="font-serif text-2xl font-bold text-white group-hover:text-gold-200 transition-colors leading-snug">
+                                            <h3 className="font-sans text-xl sm:text-2xl font-bold text-white group-hover:text-brand-200 transition-colors leading-snug">
                                                 Legal Title & Sanction Uncertainty
                                             </h3>
-                                            <p className="text-slate-200/90 text-sm sm:text-base leading-relaxed font-light">
+                                            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                                 Purchasing unsanctioned buildings risks municipal notices, loan denials from nationalized banks, and uncertain resale appreciation.
                                             </p>
                                         </div>
@@ -595,22 +598,22 @@
 
                                     {/* Heritage Fix Box */}
                                     <div className="p-5 sm:p-6 pt-0">
-                                        <div className="p-3.5 rounded-xl bg-gold-400/10 border border-gold-400/30 text-xs sm:text-sm space-y-2.5">
-                                            <div className="font-bold flex items-center justify-between text-gold-300">
-                                                <span>🏛️ Heritage Engineering:</span>
-                                                <span className="text-[11px] bg-gold-400 text-obsidian-950 px-2 py-0.5 rounded font-extrabold">SANCTIONED</span>
+                                        <div className="p-4 rounded-xl bg-brand-950/70 border border-brand-500/40 text-xs sm:text-sm space-y-3">
+                                            <div className="font-bold flex items-center justify-between text-brand-200 text-xs gap-1.5">
+                                                <span className="whitespace-nowrap">🏛️ Heritage Solution:</span>
+                                                <span className="text-[11px] bg-brand-500 text-white px-2.5 py-0.5 rounded font-extrabold whitespace-nowrap shrink-0">SANCTIONED</span>
                                             </div>
-                                            <ul className="space-y-1.5 text-xs text-slate-200 font-light">
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-gold-400">✓</span>
+                                            <ul className="space-y-2 text-xs sm:text-sm text-slate-200 font-medium">
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-brand-400 font-bold">✓</span>
                                                     <span>100% Corporation Sanctioned Plans</span>
                                                 </li>
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-gold-400">✓</span>
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-brand-400 font-bold">✓</span>
                                                     <span>Pre-Approved Home Loans (SBI, HDFC)</span>
                                                 </li>
-                                                <li className="flex items-center space-x-1.5">
-                                                    <span className="text-gold-400">✓</span>
+                                                <li className="flex items-center space-x-2">
+                                                    <span className="text-brand-400 font-bold">✓</span>
                                                     <span>Clear Search Reports & Legally Safe</span>
                                                 </li>
                                             </ul>
@@ -622,80 +625,80 @@
                         </div>
                     </section>
 
-                    {}
-                    <section id="solution" className="py-20 bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-obsidian-900 text-white relative">
+                    {/* USP & FINANCIAL CALCULATOR SECTION */}
+                    <section id="solution" className="py-16 sm:py-24 bg-gradient-to-b from-midnight-900 via-midnight-950 to-midnight-900 text-white relative">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                                 
                                 {/* Left Content */}
-                                <div className="space-y-6">
-                                    <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-300 text-xs font-bold uppercase tracking-wider">
+                                <div className="space-y-5 sm:space-y-6">
+                                    <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-950/90 border border-brand-400/40 text-brand-200 text-xs sm:text-sm font-bold uppercase tracking-wider">
                                         <SunSolarIcon />
                                         <span>The Master USP</span>
                                     </div>
 
-                                    <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+                                    <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
                                         Engineered for Complete Peace of Mind.
                                     </h2>
 
-                                    <p className="text-slate-300 text-xs sm:text-base leading-relaxed font-light">
-                                        We construct self-sustaining residential ecosystems. Our signature <span className="text-gold-300 font-semibold">25-Year Solar Energy Infrastructure</span> powers all shared utilities—completely insulating your family from rising common electricity bills.
+                                    <p className="text-slate-200 text-sm sm:text-lg leading-relaxed font-normal">
+                                        We construct self-sustaining residential ecosystems. Our signature <span className="text-brand-300 font-bold">25-Year Solar Energy Infrastructure</span> powers all shared utilities—completely insulating your family from rising common electricity bills.
                                     </p>
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 flex items-start space-x-3">
-                                            <div className="p-2 rounded-lg bg-gold-400/10 text-gold-400 font-bold text-base">⚡</div>
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 flex items-start space-x-3.5">
+                                            <div className="p-2.5 rounded-xl bg-amberGlow-500/20 text-amberGlow-400 font-bold text-lg">⚡</div>
                                             <div>
-                                                <h4 className="font-bold text-white text-xs sm:text-sm">Smart Elevators</h4>
-                                                <p className="text-[11px] text-slate-400 font-light">Zero common bill for automatic elevator power.</p>
+                                                <h4 className="font-bold text-white text-sm sm:text-base">Smart Elevators</h4>
+                                                <p className="text-xs text-slate-300 font-normal">Zero common bill for automatic elevator power.</p>
                                             </div>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 flex items-start space-x-3">
-                                            <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 font-bold text-base">💧</div>
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 flex items-start space-x-3.5">
+                                            <div className="p-2.5 rounded-xl bg-emeraldGlow-500/20 text-emeraldGlow-400 font-bold text-lg">💧</div>
                                             <div>
-                                                <h4 className="font-bold text-white text-xs sm:text-sm">Jalpari Pumps</h4>
-                                                <p className="text-[11px] text-slate-400 font-light">Automated overhead water pumping powered by solar energy.</p>
+                                                <h4 className="font-bold text-white text-sm sm:text-base">Jalpari Pumps</h4>
+                                                <p className="text-xs text-slate-300 font-normal">Automated overhead water pumping powered by solar energy.</p>
                                             </div>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 flex items-start space-x-3">
-                                            <div className="p-2 rounded-lg bg-gold-400/10 text-gold-400 font-bold text-base">💡</div>
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 flex items-start space-x-3.5">
+                                            <div className="p-2.5 rounded-xl bg-brand-500/20 text-brand-300 font-bold text-lg">💡</div>
                                             <div>
-                                                <h4 className="font-bold text-white text-xs sm:text-sm">Corridors & Parking</h4>
-                                                <p className="text-[11px] text-slate-400 font-light">Continuous 24/7 common area illumination.</p>
+                                                <h4 className="font-bold text-white text-sm sm:text-base">Corridors & Parking</h4>
+                                                <p className="text-xs text-slate-300 font-normal">Continuous 24/7 common area illumination.</p>
                                             </div>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 flex items-start space-x-3">
-                                            <div className="p-2 rounded-lg bg-gold-400/10 text-gold-400 font-bold text-base">🛡️</div>
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 flex items-start space-x-3.5">
+                                            <div className="p-2.5 rounded-xl bg-indigo-500/20 text-indigo-300 font-bold text-lg">🛡️</div>
                                             <div>
-                                                <h4 className="font-bold text-white text-xs sm:text-sm">HD Security System</h4>
-                                                <p className="text-[11px] text-slate-400 font-light">Uninterrupted solar backup for 24/7 CCTV surveillance.</p>
+                                                <h4 className="font-bold text-white text-sm sm:text-base">HD Security System</h4>
+                                                <p className="text-xs text-slate-300 font-normal">Uninterrupted solar backup for 24/7 CCTV surveillance.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Right Solar Financial ROI Calculator */}
-                                <div className="glass-gold-card rounded-2xl p-6 sm:p-8 shadow-2xl relative border border-gold-400/30">
-                                    <div className="absolute top-0 right-0 -mt-3 -mr-3 gold-button-gradient text-obsidian-950 font-extrabold text-[10px] px-3.5 py-1 rounded-full uppercase tracking-widest shadow-md">
+                                <div className="glass-card-modern rounded-2xl p-6 sm:p-8 shadow-2xl relative border border-brand-500/40">
+                                    <div className="absolute top-0 right-0 -mt-3 -mr-3 btn-primary-gradient text-white font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">
                                         Interactive Calculator
                                     </div>
 
-                                    <h3 className="font-serif text-2xl font-bold text-white mb-2">
+                                    <h3 className="font-sans text-2xl sm:text-3xl font-bold text-white mb-2">
                                         Solar Financial Savings Calculator
                                     </h3>
-                                    <p className="text-slate-400 text-xs mb-6 font-light">
+                                    <p className="text-slate-300 text-xs sm:text-sm mb-6 font-normal">
                                         Slide to see estimated maintenance savings over 25 years in an Er. Irfan Group solar apartment:
                                     </p>
 
                                     <div className="space-y-6">
                                         <div>
-                                            <div className="flex justify-between text-xs sm:text-sm mb-2 font-medium">
-                                                <span className="text-slate-300">Estimated Monthly Maintenance:</span>
-                                                <span className="text-gold-300 font-bold text-base">₹{estimatedMonthlyBill.toLocaleString()} / mo</span>
+                                            <div className="flex justify-between text-xs sm:text-base mb-2.5 font-medium">
+                                                <span className="text-slate-200">Estimated Monthly Maintenance:</span>
+                                                <span className="text-amberGlow-400 font-bold text-lg">₹{estimatedMonthlyBill.toLocaleString()} / mo</span>
                                             </div>
                                             <input 
                                                 type="range" 
@@ -704,28 +707,28 @@
                                                 step="250"
                                                 value={estimatedMonthlyBill}
                                                 onChange={(e) => setEstimatedMonthlyBill(Number(e.target.value))}
-                                                className="w-full h-2.5 bg-obsidian-800 rounded-lg appearance-none cursor-pointer accent-gold-400"
+                                                className="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                                             />
-                                            <div className="flex justify-between text-[11px] text-slate-500 mt-1.5 font-mono">
+                                            <div className="flex justify-between text-xs text-slate-400 mt-2 font-mono">
                                                 <span>₹1,000</span>
                                                 <span>₹3,000</span>
                                                 <span>₹5,000</span>
                                             </div>
                                         </div>
 
-                                        <div className="bg-obsidian-950 p-6 rounded-xl border border-gold-400/20 text-center relative overflow-hidden">
-                                            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 block mb-1">Total Guaranteed 25-Year Savings</span>
-                                            <div className="font-serif text-3xl sm:text-4xl font-extrabold gold-gradient-text">
+                                        <div className="bg-midnight-950 p-6 sm:p-8 rounded-xl border border-brand-500/30 text-center relative overflow-hidden">
+                                            <span className="text-xs uppercase tracking-[0.2em] text-slate-300 block mb-2 font-semibold">Total Guaranteed 25-Year Savings</span>
+                                            <div className="font-sans text-4xl sm:text-5xl lg:text-6xl font-black text-amberGlow-400">
                                                 ₹{totalSolarSavings.toLocaleString()}
                                             </div>
-                                            <span className="text-xs text-emerald-400 mt-2 block font-semibold">
+                                            <span className="text-xs sm:text-sm text-emeraldGlow-400 mt-2.5 block font-bold">
                                                 ✓ Zero Elevator Maintenance Surprise Bills
                                             </span>
                                         </div>
 
                                         <a 
                                             href="#projects"
-                                            className="w-full block text-center py-3.5 px-6 rounded-lg gold-button-gradient text-obsidian-950 font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg hover:scale-[1.02]"
+                                            className="w-full block text-center py-4 px-6 rounded-xl btn-primary-gradient text-white font-extrabold text-sm sm:text-base uppercase tracking-wider transition-all shadow-lg hover:scale-[1.02]"
                                         >
                                             Lock In Your Solar Residence
                                         </a>
@@ -736,25 +739,25 @@
                         </div>
                     </section>
 
-                    {/* AMENITIES SECTION - LUXURY OBSIDIAN & PHOTOREALISTIC CARDS */}
-                    <section id="amenities" className="py-20 sm:py-28 bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950 text-white relative border-t border-gold-400/20 overflow-hidden">
+                    {/* AMENITIES SECTION - LUXURY MIDNIGHT & MODERN CARDS */}
+                    <section id="amenities" className="py-16 sm:py-24 bg-gradient-to-b from-midnight-950 via-midnight-900 to-midnight-950 text-white relative border-t border-slate-800/80 overflow-hidden">
                         
                         {/* Ambient Background Glows */}
-                        <div className="absolute top-1/3 left-0 w-80 h-80 bg-gold-400/5 blur-[120px] rounded-full pointer-events-none"></div>
-                        <div className="absolute bottom-1/3 right-0 w-80 h-80 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute top-1/3 left-0 w-80 h-80 bg-brand-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute bottom-1/3 right-0 w-80 h-80 bg-emeraldGlow-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                             
                             {/* Section Header */}
-                            <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-                                <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-obsidian border border-gold-400/30 text-gold-300 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3.5 shimmer-badge">
-                                    <span className="text-gold-400">✨</span>
+                            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                                <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-dark border border-brand-400/30 text-brand-200 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-3.5 shimmer-badge-modern">
+                                    <span className="text-amberGlow-400">✨</span>
                                     <span>Thoughtfully Curated Specifications</span>
                                 </div>
-                                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                                <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight">
                                     Amenities Built for Generational Value.
                                 </h2>
-                                <p className="text-slate-200/95 mt-3.5 sm:mt-4 text-sm sm:text-base lg:text-lg leading-relaxed font-light px-2">
+                                <p className="text-slate-200 mt-4 text-sm sm:text-lg leading-relaxed font-normal px-2">
                                     Every specification is engineered to provide long-term comfort, structural safety, and verified asset growth for your family.
                                 </p>
                             </div>
@@ -763,7 +766,7 @@
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                                 
                                 {/* Card 1: Dual Water Reliability */}
-                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-emerald-400/70 transition-all duration-500">
+                                <div className="relative rounded-2xl overflow-hidden min-h-[400px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-slate-800 hover:border-emeraldGlow-400/70 transition-all duration-500">
                                     {/* Full Image Background */}
                                     <img 
                                         src="https://irfan-bay.vercel.app/amenity-water.jpg" 
@@ -771,33 +774,33 @@
                                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                     />
                                     {/* Rich Dark Scrim Vignette Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/85 to-midnight-950/30 pointer-events-none"></div>
 
                                     {/* Top Badge & Number */}
                                     <div className="relative z-10 flex items-center justify-between">
-                                        <div className="bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                        <div className="bg-emeraldGlow-500/30 border border-emeraldGlow-500/50 text-emeraldGlow-300 text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-2 shadow-md whitespace-nowrap">
                                             <WaterEmeraldIcon />
-                                            <span>24/7 DUAL WATER</span>
+                                            <span className="whitespace-nowrap">24/7 DUAL WATER</span>
                                         </div>
-                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">01 / SPEC</span>
+                                        <span className="text-xs sm:text-sm font-mono text-brand-300 bg-midnight-950/80 px-3 py-1 rounded-md border border-brand-500/30 backdrop-blur-md font-semibold whitespace-nowrap">01 / SPEC</span>
                                     </div>
 
                                     {/* Bottom Content Over Image */}
                                     <div className="relative z-10 space-y-3 pt-16">
-                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-emerald-200 transition-colors leading-tight">
+                                        <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white group-hover:text-emeraldGlow-200 transition-colors leading-tight">
                                             Dual Water Reliability System
                                         </h3>
-                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                        <p className="text-slate-100 text-xs sm:text-base leading-relaxed font-normal">
                                             Deep-well 24-hour boring water supplemented by dedicated municipal sweet water connections. Automated Jalpari pressure pumps ensure steady pressure to every floor.
                                         </p>
-                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-emerald-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-emerald-500/40">
+                                        <div className="inline-flex items-center space-x-2 text-xs sm:text-sm text-emeraldGlow-300 font-semibold glass-dark px-4 py-2.5 rounded-xl border border-emeraldGlow-500/40">
                                             <span>✦ Proven Benefit: Zero summer water anxiety or tanker costs.</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Card 2: 100% Sanctioned & Bank Approved */}
-                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-gold-400/70 transition-all duration-500">
+                                <div className="relative rounded-2xl overflow-hidden min-h-[400px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-slate-800 hover:border-brand-400/70 transition-all duration-500">
                                     {/* Full Image Background */}
                                     <img 
                                         src="https://irfan-bay.vercel.app/amenity-legal.jpg" 
@@ -805,33 +808,33 @@
                                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                     />
                                     {/* Rich Dark Scrim Vignette Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/85 to-midnight-950/30 pointer-events-none"></div>
 
                                     {/* Top Badge & Number */}
                                     <div className="relative z-10 flex items-center justify-between">
-                                        <div className="bg-gold-400/30 border border-gold-400/50 text-gold-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                        <div className="bg-brand-500/30 border border-brand-500/50 text-brand-300 text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-2 shadow-md whitespace-nowrap">
                                             <ShieldGoldIcon />
-                                            <span>100% SANCTIONED</span>
+                                            <span className="whitespace-nowrap">100% SANCTIONED</span>
                                         </div>
-                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">02 / SPEC</span>
+                                        <span className="text-xs sm:text-sm font-mono text-brand-300 bg-midnight-950/80 px-3 py-1 rounded-md border border-brand-500/30 backdrop-blur-md font-semibold whitespace-nowrap">02 / SPEC</span>
                                     </div>
 
                                     {/* Bottom Content Over Image */}
                                     <div className="relative z-10 space-y-3 pt-16">
-                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-200 transition-colors leading-tight">
+                                        <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white group-hover:text-brand-200 transition-colors leading-tight">
                                             100% Sanctioned & Bank Approved
                                         </h3>
-                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                        <p className="text-slate-100 text-xs sm:text-base leading-relaxed font-normal">
                                             Fully documented, Malegaon Corporation approved building blueprints. Clear titles ready for immediate, frictionless nationalized bank home loan sanctioning.
                                         </p>
-                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-gold-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-gold-400/40">
+                                        <div className="inline-flex items-center space-x-2 text-xs sm:text-sm text-brand-300 font-semibold glass-dark px-4 py-2.5 rounded-xl border border-brand-500/40">
                                             <span>✦ Proven Benefit: Safe legal ownership & fast bank loan approvals.</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Card 3: Modern HD Security & Connectivity */}
-                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-blue-400/70 transition-all duration-500">
+                                <div className="relative rounded-2xl overflow-hidden min-h-[400px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-slate-800 hover:border-indigo-400/70 transition-all duration-500">
                                     {/* Full Image Background */}
                                     <img 
                                         src="https://irfan-bay.vercel.app/amenity-security.jpg" 
@@ -839,35 +842,35 @@
                                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                     />
                                     {/* Rich Dark Scrim Vignette Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/85 to-midnight-950/30 pointer-events-none"></div>
 
                                     {/* Top Badge & Number */}
                                     <div className="relative z-10 flex items-center justify-between">
-                                        <div className="bg-blue-500/30 border border-blue-500/50 text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
-                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="bg-indigo-500/30 border border-indigo-500/50 text-indigo-300 text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-2 shadow-md whitespace-nowrap">
+                                            <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                                             </svg>
-                                            <span>24/7 HD SURVEILLANCE</span>
+                                            <span className="whitespace-nowrap">24/7 HD SURVEILLANCE</span>
                                         </div>
-                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">03 / SPEC</span>
+                                        <span className="text-xs sm:text-sm font-mono text-brand-300 bg-midnight-950/80 px-3 py-1 rounded-md border border-brand-500/30 backdrop-blur-md font-semibold whitespace-nowrap">03 / SPEC</span>
                                     </div>
 
                                     {/* Bottom Content Over Image */}
                                     <div className="relative z-10 space-y-3 pt-16">
-                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-blue-200 transition-colors leading-tight">
+                                        <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white group-hover:text-indigo-200 transition-colors leading-tight">
                                             Modern HD Security & Connectivity
                                         </h3>
-                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                        <p className="text-slate-100 text-xs sm:text-base leading-relaxed font-normal">
                                             24/7 HD CCTV camera coverage for entrance gates, corridors, elevators, and parking levels alongside high-speed Wi-Fi ready common areas.
                                         </p>
-                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-blue-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-blue-500/40">
+                                        <div className="inline-flex items-center space-x-2 text-xs sm:text-sm text-indigo-300 font-semibold glass-dark px-4 py-2.5 rounded-xl border border-indigo-500/40">
                                             <span>✦ Proven Benefit: Total protection for women, children, and elders.</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Card 4: Generational Structural Build */}
-                                <div className="relative rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-gold-400/25 hover:border-gold-400/70 transition-all duration-500">
+                                <div className="relative rounded-2xl overflow-hidden min-h-[400px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8 group shadow-2xl border border-slate-800 hover:border-amberGlow-400/70 transition-all duration-500">
                                     {/* Full Image Background */}
                                     <img 
                                         src="https://irfan-bay.vercel.app/amenity-structure.jpg" 
@@ -875,26 +878,26 @@
                                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                     />
                                     {/* Rich Dark Scrim Vignette Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/85 to-obsidian-950/30 pointer-events-none"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/85 to-midnight-950/30 pointer-events-none"></div>
 
                                     {/* Top Badge & Number */}
                                     <div className="relative z-10 flex items-center justify-between">
-                                        <div className="bg-gold-400/30 border border-gold-400/50 text-gold-300 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-1.5 shadow-md">
+                                        <div className="bg-amberGlow-500/30 border border-amberGlow-500/50 text-amberGlow-300 text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md flex items-center space-x-2 shadow-md whitespace-nowrap">
                                             <CrownIcon />
-                                            <span>SEISMIC RESISTANT RCC</span>
+                                            <span className="whitespace-nowrap">SEISMIC RESISTANT RCC</span>
                                         </div>
-                                        <span className="text-xs font-mono text-gold-300/80 bg-obsidian-950/80 px-2.5 py-1 rounded-md border border-gold-400/30 backdrop-blur-md">04 / SPEC</span>
+                                        <span className="text-xs sm:text-sm font-mono text-brand-300 bg-midnight-950/80 px-3 py-1 rounded-md border border-brand-500/30 backdrop-blur-md font-semibold whitespace-nowrap">04 / SPEC</span>
                                     </div>
 
                                     {/* Bottom Content Over Image */}
                                     <div className="relative z-10 space-y-3 pt-16">
-                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-200 transition-colors leading-tight">
+                                        <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white group-hover:text-amberGlow-200 transition-colors leading-tight">
                                             Generational Structural Build
                                         </h3>
-                                        <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-light">
+                                        <p className="text-slate-100 text-xs sm:text-base leading-relaxed font-normal">
                                             Constructed using branded 53-grade cement, corrosion-resistant Fe-550 TMT steel bars, and heavy earthquake-resistant RCC frame engineering.
                                         </p>
-                                        <div className="inline-flex items-center space-x-1.5 text-xs sm:text-sm text-gold-300 font-semibold glass-obsidian px-3.5 py-2 rounded-xl border border-gold-400/40">
+                                        <div className="inline-flex items-center space-x-2 text-xs sm:text-sm text-amberGlow-300 font-semibold glass-dark px-4 py-2.5 rounded-xl border border-amberGlow-500/40">
                                             <span>✦ Proven Benefit: Maximum durability with minimal long-term upkeep.</span>
                                         </div>
                                     </div>
@@ -904,28 +907,28 @@
                         </div>
                     </section>
 
-                    {}
-                    <section id="projects" className="py-20 bg-obsidian-900 text-white relative">
+                    {/* FLAGSHIP DEVELOPMENTS / PORTFOLIO */}
+                    <section id="projects" className="py-16 sm:py-24 bg-midnight-900 text-white relative">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             
                             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
                                 <div>
-                                    <span className="text-gold-400 text-xs font-bold uppercase tracking-[0.25em]">Flagship Developments</span>
-                                    <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">
+                                    <span className="text-brand-400 text-xs sm:text-sm font-bold uppercase tracking-[0.25em]">Flagship Developments</span>
+                                    <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white mt-2">
                                         Choose Your Landmark Address.
                                     </h2>
                                 </div>
 
                                 {/* Filter Tabs */}
-                                <div className="mt-6 md:mt-0 flex flex-wrap gap-2">
+                                <div className="mt-6 md:mt-0 flex flex-wrap gap-2 sm:gap-2.5">
                                     {['all', 'hawwa', 'makka', 'mohammad', 'millat'].map((key) => (
                                         <button
                                             key={key}
                                             onClick={() => setSelectedProjectFilter(key)}
-                                            className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
+                                            className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${
                                                 selectedProjectFilter === key 
-                                                    ? 'gold-button-gradient text-obsidian-950 shadow-md' 
-                                                    : 'glass-obsidian text-slate-300 hover:border-gold-400/50'
+                                                    ? 'btn-primary-gradient text-white shadow-md' 
+                                                    : 'glass-dark text-slate-200 hover:border-brand-400/50'
                                             }`}
                                         >
                                             {key === 'all' ? 'All Towers' : `${key.charAt(0).toUpperCase() + key.slice(1)} Tower`}
@@ -939,29 +942,29 @@
                                 
                                 {/* Hawwa Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'hawwa') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
+                                    <div className="glass-card-modern rounded-2xl overflow-hidden hover:border-brand-400 transition-all flex flex-col justify-between group shadow-xl border border-slate-800">
                                         <div>
                                             {/* Image Banner */}
-                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                            <div className="relative h-56 sm:h-64 overflow-hidden bg-midnight-950">
                                                 <img 
                                                     src="https://irfan-bay.vercel.app/FlagshipDevelopments/Hawwa_Tower.jpg" 
                                                     alt="Hawwa Tower Luxury Residential and Commercial Complex" 
                                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                                 
                                                 {/* Top Badges */}
-                                                <div className="absolute top-3 left-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 left-3 bg-brand-500/30 border border-brand-500/50 text-brand-200 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     100FT ROAD FRONT
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 right-3 bg-emeraldGlow-500/30 border border-emeraldGlow-500/50 text-emeraldGlow-300 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     TERRACE SUITES
                                                 </div>
                                                 
                                                 {/* Title Overlay */}
-                                                <div className="absolute bottom-3 left-4 right-4">
-                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Hawwa Tower</h3>
-                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                <div className="absolute bottom-3.5 left-4 right-4">
+                                                    <h3 className="font-sans text-2xl font-black text-white leading-tight">Hawwa Tower</h3>
+                                                    <span className="text-slate-200 text-xs sm:text-sm flex items-center space-x-1 mt-1 font-medium">
                                                         <span>📍</span>
                                                         <span>Opposite Hawwa Masjid, 100ft Road</span>
                                                     </span>
@@ -969,21 +972,21 @@
                                             </div>
 
                                             {/* Card Content */}
-                                            <div className="p-6 space-y-3">
-                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
-                                                    High-rise luxury featuring ground-floor commercial showrooms and attached private sky terrace gardens ranging from <span className="text-gold-300 font-semibold">100 to 550+ sq.ft.</span>
+                                            <div className="p-5 sm:p-6 space-y-3.5">
+                                                <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
+                                                    High-rise luxury featuring ground-floor commercial showrooms and attached private sky terrace gardens ranging from <span className="text-brand-300 font-bold">100 to 550+ sq.ft.</span>
                                                 </p>
-                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
-                                                    <li className="flex items-center text-emerald-300">✓ Ground Showrooms + Sky Terraces</li>
+                                                <ul className="text-xs sm:text-sm text-slate-200 space-y-2.5 pt-3 border-t border-slate-800 font-medium">
+                                                    <li className="flex items-center text-emeraldGlow-300 font-semibold">✓ Ground Showrooms + Sky Terraces</li>
                                                     <li className="flex items-center">✓ Opp. Hawwa Masjid, 100ft Main Road</li>
                                                     <li className="flex items-center">✓ 25-Yr Solar Net-Zero Elevator</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div className="p-6 pt-0">
+                                        <div className="p-5 sm:p-6 pt-0">
                                             <a 
                                                 href="#location"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
+                                                className="w-full py-3.5 rounded-xl bg-brand-500/15 hover:bg-brand-500 hover:text-white text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors block text-center border border-brand-500/30 shadow-sm"
                                             >
                                                 Inquire Hawwa Tower
                                             </a>
@@ -993,29 +996,29 @@
 
                                 {/* Makka Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'makka') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
+                                    <div className="glass-card-modern rounded-2xl overflow-hidden hover:border-brand-400 transition-all flex flex-col justify-between group shadow-xl border border-slate-800">
                                         <div>
                                             {/* Image Banner */}
-                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                            <div className="relative h-56 sm:h-64 overflow-hidden bg-midnight-950">
                                                 <img 
                                                     src="https://irfan-bay.vercel.app/FlagshipDevelopments/Makka_Tower.jpg" 
                                                     alt="Makka Tower Spiritual Hub Residences" 
                                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                                 
                                                 {/* Top Badges */}
-                                                <div className="absolute top-3 left-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 left-3 bg-amberGlow-500/30 border border-amberGlow-500/50 text-amberGlow-300 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     SPIRITUAL HUB
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 right-3 bg-emeraldGlow-500/30 border border-emeraldGlow-500/50 text-emeraldGlow-300 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     RESERVED PARKING
                                                 </div>
                                                 
                                                 {/* Title Overlay */}
-                                                <div className="absolute bottom-3 left-4 right-4">
-                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Makka Tower</h3>
-                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                <div className="absolute bottom-3.5 left-4 right-4">
+                                                    <h3 className="font-sans text-2xl font-black text-white leading-tight">Makka Tower</h3>
+                                                    <span className="text-slate-200 text-xs sm:text-sm flex items-center space-x-1 mt-1 font-medium">
                                                         <span>📍</span>
                                                         <span>Opposite Makkah Masjid</span>
                                                     </span>
@@ -1023,21 +1026,21 @@
                                             </div>
 
                                             {/* Card Content */}
-                                            <div className="p-6 space-y-3">
-                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                            <div className="p-5 sm:p-6 space-y-3.5">
+                                                <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                                     Prime strategic location situated directly opposite Makkah Masjid with covered basement parking bays and zero-electricity solar elevators.
                                                 </p>
-                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
-                                                    <li className="flex items-center text-emerald-300">✓ Directly Opp. Makkah Masjid</li>
+                                                <ul className="text-xs sm:text-sm text-slate-200 space-y-2.5 pt-3 border-t border-slate-800 font-medium">
+                                                    <li className="flex items-center text-emeraldGlow-300 font-semibold">✓ Directly Opp. Makkah Masjid</li>
                                                     <li className="flex items-center">✓ Covered Reserved Basement Bays</li>
                                                     <li className="flex items-center">✓ Dual Water Municipal Redundancy</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div className="p-6 pt-0">
+                                        <div className="p-5 sm:p-6 pt-0">
                                             <a 
                                                 href="#location"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
+                                                className="w-full py-3.5 rounded-xl bg-brand-500/15 hover:bg-brand-500 hover:text-white text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors block text-center border border-brand-500/30 shadow-sm"
                                             >
                                                 Inquire Makka Tower
                                             </a>
@@ -1047,29 +1050,29 @@
 
                                 {/* Mohammad Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'mohammad') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
+                                    <div className="glass-card-modern rounded-2xl overflow-hidden hover:border-brand-400 transition-all flex flex-col justify-between group shadow-xl border border-slate-800">
                                         <div>
                                             {/* Image Banner */}
-                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                            <div className="relative h-56 sm:h-64 overflow-hidden bg-midnight-950">
                                                 <img 
                                                     src="https://irfan-bay.vercel.app/FlagshipDevelopments/Mohammad_Tower.jpg" 
                                                     alt="Mohammad Tower Peaceful Living Enclave" 
                                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                                 
                                                 {/* Top Badges */}
-                                                <div className="absolute top-3 left-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 left-3 bg-emeraldGlow-500/30 border border-emeraldGlow-500/50 text-emeraldGlow-300 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     PEACEFUL ENCLAVE
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 right-3 bg-brand-500/30 border border-brand-500/50 text-brand-200 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     QUIET LIVING
                                                 </div>
                                                 
                                                 {/* Title Overlay */}
-                                                <div className="absolute bottom-3 left-4 right-4">
-                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Mohammad Tower</h3>
-                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                <div className="absolute bottom-3.5 left-4 right-4">
+                                                    <h3 className="font-sans text-2xl font-black text-white leading-tight">Mohammad Tower</h3>
+                                                    <span className="text-slate-200 text-xs sm:text-sm flex items-center space-x-1 mt-1 font-medium">
                                                         <span>📍</span>
                                                         <span>Near Hazrat Ji Masjid</span>
                                                     </span>
@@ -1077,21 +1080,21 @@
                                             </div>
 
                                             {/* Card Content */}
-                                            <div className="p-6 space-y-3">
-                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                            <div className="p-5 sm:p-6 space-y-3.5">
+                                                <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                                     Nestled in a serene residential zone near Hazrat Ji Masjid. Engineered for maximum natural ventilation, sunlight, and quiet family living.
                                                 </p>
-                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
-                                                    <li className="flex items-center text-emerald-300">✓ Low-Noise Serene Residential Zone</li>
+                                                <ul className="text-xs sm:text-sm text-slate-200 space-y-2.5 pt-3 border-t border-slate-800 font-medium">
+                                                    <li className="flex items-center text-emeraldGlow-300 font-semibold">✓ Low-Noise Serene Residential Zone</li>
                                                     <li className="flex items-center">✓ Near Hazrat Ji Masjid</li>
                                                     <li className="flex items-center">✓ 24/7 HD Security & CCTV Monitoring</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div className="p-6 pt-0">
+                                        <div className="p-5 sm:p-6 pt-0">
                                             <a 
                                                 href="#location"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
+                                                className="w-full py-3.5 rounded-xl bg-brand-500/15 hover:bg-brand-500 hover:text-white text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors block text-center border border-brand-500/30 shadow-sm"
                                             >
                                                 Inquire Mohammad Tower
                                             </a>
@@ -1101,29 +1104,29 @@
 
                                 {/* Millat Tower */}
                                 {(selectedProjectFilter === 'all' || selectedProjectFilter === 'millat') && (
-                                    <div className="glass-gold-card rounded-2xl overflow-hidden hover:border-gold-400 transition-all flex flex-col justify-between group shadow-xl border border-gold-400/20">
+                                    <div className="glass-card-modern rounded-2xl overflow-hidden hover:border-brand-400 transition-all flex flex-col justify-between group shadow-xl border border-slate-800">
                                         <div>
                                             {/* Image Banner */}
-                                            <div className="relative h-56 sm:h-60 overflow-hidden bg-obsidian-950">
+                                            <div className="relative h-56 sm:h-64 overflow-hidden bg-midnight-950">
                                                 <img 
                                                     src="https://irfan-bay.vercel.app/FlagshipDevelopments/Millat_Tower.jpg" 
                                                     alt="Millat Tower Educational Hub Residences" 
                                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent pointer-events-none"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent pointer-events-none"></div>
                                                 
                                                 {/* Top Badges */}
-                                                <div className="absolute top-3 left-3 bg-gold-400/30 border border-gold-400/50 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 left-3 bg-brand-500/30 border border-brand-500/50 text-brand-200 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     EDUCATIONAL HUB
                                                 </div>
-                                                <div className="absolute top-3 right-3 bg-emerald-500/30 border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm">
+                                                <div className="absolute top-3 right-3 bg-emeraldGlow-500/30 border border-emeraldGlow-500/50 text-emeraldGlow-300 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-md shadow-sm whitespace-nowrap">
                                                     SOLAR ELEVATOR
                                                 </div>
                                                 
                                                 {/* Title Overlay */}
-                                                <div className="absolute bottom-3 left-4 right-4">
-                                                    <h3 className="font-serif text-2xl font-bold text-white leading-tight">Millat Tower</h3>
-                                                    <span className="text-slate-300 text-xs flex items-center space-x-1 mt-0.5">
+                                                <div className="absolute bottom-3.5 left-4 right-4">
+                                                    <h3 className="font-sans text-2xl font-black text-white leading-tight">Millat Tower</h3>
+                                                    <span className="text-slate-200 text-xs sm:text-sm flex items-center space-x-1 mt-1 font-medium">
                                                         <span>📍</span>
                                                         <span>Near Millat Madrasa & Gulshan School</span>
                                                     </span>
@@ -1131,21 +1134,21 @@
                                             </div>
 
                                             {/* Card Content */}
-                                            <div className="p-6 space-y-3">
-                                                <p className="text-slate-200/90 text-xs sm:text-sm leading-relaxed font-light">
+                                            <div className="p-5 sm:p-6 space-y-3.5">
+                                                <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                                     Located adjacent to premier educational institutions with seamless family connectivity and high-speed smart solar elevators.
                                                 </p>
-                                                <ul className="text-xs text-slate-300 space-y-2 pt-3 border-t border-gold-400/15">
-                                                    <li className="flex items-center text-emerald-300">✓ Near Millat Madrasa & Gulshan School</li>
+                                                <ul className="text-xs sm:text-sm text-slate-200 space-y-2.5 pt-3 border-t border-slate-800 font-medium">
+                                                    <li className="flex items-center text-emeraldGlow-300 font-semibold">✓ Near Millat Madrasa & Gulshan School</li>
                                                     <li className="flex items-center">✓ 100% Sanctioned Title Documents</li>
                                                     <li className="flex items-center">✓ Smart Solar Lift System</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div className="p-6 pt-0">
+                                        <div className="p-5 sm:p-6 pt-0">
                                             <a 
                                                 href="#location"
-                                                className="w-full py-2.5 rounded-lg bg-gold-400/10 hover:bg-gold-400 hover:text-obsidian-950 text-gold-300 font-bold text-xs uppercase tracking-wider transition-colors block text-center border border-gold-400/30 shadow-sm"
+                                                className="w-full py-3.5 rounded-xl bg-brand-500/15 hover:bg-brand-500 hover:text-white text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors block text-center border border-brand-500/30 shadow-sm"
                                             >
                                                 Inquire Millat Tower
                                             </a>
@@ -1159,24 +1162,24 @@
 
                     {}
                     {/* STRATEGIC LOCATION & NEIGHBORHOOD CONNECTIVITY */}
-                    <section id="location" className="py-20 sm:py-28 bg-obsidian-950 text-white relative border-t border-gold-400/20 overflow-hidden">
+                    <section id="location" className="py-16 sm:py-24 bg-midnight-950 text-white relative border-t border-slate-800/80 overflow-hidden">
                         
                         {/* Ambient Radial Background Glows */}
-                        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold-400/5 blur-[120px] rounded-full pointer-events-none"></div>
-                        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-brand-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+                        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-emeraldGlow-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                             
                             {/* Section Header */}
-                            <div className="text-center max-w-3xl mx-auto mb-16">
-                                <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-obsidian border border-gold-400/30 text-gold-300 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] mb-3.5 shimmer-badge">
-                                    <span className="text-gold-400">📍</span>
+                            <div className="text-center max-w-3xl mx-auto mb-14">
+                                <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-dark border border-brand-400/30 text-brand-200 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-3.5 shimmer-badge-modern">
+                                    <span className="text-amberGlow-400">📍</span>
                                     <span>Unrivaled Strategic Connectivity</span>
                                 </div>
-                                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                                <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight">
                                     At the Center of Everything.
                                 </h2>
-                                <p className="text-slate-200/95 mt-3.5 sm:mt-4 text-sm sm:text-base lg:text-lg leading-relaxed font-light px-2">
+                                <p className="text-slate-200 mt-4 text-sm sm:text-lg leading-relaxed font-normal px-2">
                                     Positioned in Malegaon's most desirable and high-appreciation neighborhoods with immediate access to major spiritual centers, premier schools, and arterial highways.
                                 </p>
                             </div>
@@ -1187,46 +1190,46 @@
                                 <div className="lg:col-span-7 space-y-6">
                                     
                                     {/* Interactive Map Visual Box */}
-                                    <div className="glass-gold-card p-5 sm:p-6 rounded-2xl border border-gold-400/30 shadow-2xl relative overflow-hidden">
+                                    <div className="glass-card-modern p-5 sm:p-6 rounded-2xl border border-brand-500/30 shadow-2xl relative overflow-hidden">
                                         
                                         <div className="flex items-center justify-between mb-4">
-                                            <span className="text-xs font-mono uppercase tracking-widest text-gold-300 flex items-center space-x-1.5">
-                                                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                            <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-brand-300 flex items-center space-x-2 font-bold">
+                                                <span className="w-2.5 h-2.5 rounded-full bg-emeraldGlow-400 animate-ping"></span>
                                                 <span>Malegaon Arterial Schematic</span>
                                             </span>
-                                            <span className="text-[11px] text-slate-400 font-light">Tap any pin below to inspect</span>
+                                            <span className="text-xs text-slate-300 font-medium">Tap any pin below to inspect</span>
                                         </div>
 
-                                        <div className="aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl bg-obsidian-900 border border-gold-400/20 relative p-4 flex flex-col justify-between overflow-hidden shadow-inner">
+                                        <div className="aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl bg-midnight-900 border border-brand-500/20 relative p-4 flex flex-col justify-between overflow-hidden shadow-inner">
                                             
                                             {/* Road Schematic Overlay */}
-                                            <svg className="absolute inset-0 w-full h-full opacity-60 pointer-events-none" viewBox="0 0 400 240">
+                                            <svg className="absolute inset-0 w-full h-full opacity-70 pointer-events-none" viewBox="0 0 400 240">
                                                 {/* Old Agra Road (NH-848) */}
-                                                <line x1="0" y1="120" x2="400" y2="120" stroke="#D4AF37" strokeWidth="9" strokeLinecap="round" />
-                                                <text x="15" y="110" fill="#F5E08B" fontSize="10" fontWeight="bold" letterSpacing="1.5">OLD AGRA ROAD (NH-848)</text>
+                                                <line x1="0" y1="120" x2="400" y2="120" stroke="#6366F1" strokeWidth="9" strokeLinecap="round" />
+                                                <text x="15" y="110" fill="#A5B4FC" fontSize="10" fontWeight="bold" letterSpacing="1.5">OLD AGRA ROAD (NH-848)</text>
                                                 
                                                 {/* Mohammad Ali Road */}
                                                 <line x1="200" y1="0" x2="200" y2="240" stroke="#64748B" strokeWidth="7" />
                                                 <text x="210" y="24" fill="#CBD5E1" fontSize="9" fontWeight="semibold" letterSpacing="1">MOHAMMAD ALI RD</text>
                                                 
                                                 {/* 100 Ft DP Road */}
-                                                <line x1="50" y1="0" x2="350" y2="240" stroke="#B45309" strokeWidth="6" strokeDasharray="6 3" />
-                                                <text x="270" y="225" fill="#FCD34D" fontSize="9" fontWeight="bold">100 FT DP ROAD</text>
+                                                <line x1="50" y1="0" x2="350" y2="240" stroke="#F59E0B" strokeWidth="6" strokeDasharray="6 3" />
+                                                <text x="270" y="225" fill="#FDE68A" fontSize="9" fontWeight="bold">100 FT DP ROAD</text>
                                                 
                                                 {/* Camp / Madina Junction Pulse */}
-                                                <circle cx="200" cy="120" r="14" fill="#D4AF37" fillOpacity="0.15" />
-                                                <circle cx="200" cy="120" r="5" fill="#D4AF37" />
-                                                <text x="140" y="138" fill="#FDE68A" fontSize="8" fontWeight="bold">MADINA CHOWK</text>
+                                                <circle cx="200" cy="120" r="14" fill="#6366F1" fillOpacity="0.2" />
+                                                <circle cx="200" cy="120" r="5" fill="#818CF8" />
+                                                <text x="140" y="138" fill="#E0E7FF" fontSize="8" fontWeight="bold">MADINA CHOWK</text>
                                             </svg>
 
                                             {/* Top Map Pin Toggles */}
                                             <div className="relative z-10 flex justify-between items-start">
                                                 <button 
                                                     onClick={() => setActiveMapLandmark('hawwa')}
-                                                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-1 ${
+                                                    className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md flex items-center space-x-1.5 ${
                                                         activeMapLandmark === 'hawwa' 
-                                                            ? 'gold-button-gradient text-obsidian-950 scale-105 shadow-gold-400/30' 
-                                                            : 'glass-obsidian text-slate-200 hover:text-gold-300 border border-gold-400/30'
+                                                            ? 'btn-primary-gradient text-white scale-105 shadow-brand-500/30' 
+                                                            : 'glass-dark text-slate-200 hover:text-brand-300 border border-brand-500/30'
                                                     }`}
                                                 >
                                                     <span>📍</span>
@@ -1235,10 +1238,10 @@
                                                 
                                                 <button 
                                                     onClick={() => setActiveMapLandmark('makka')}
-                                                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-1 ${
+                                                    className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md flex items-center space-x-1.5 ${
                                                         activeMapLandmark === 'makka' 
-                                                            ? 'gold-button-gradient text-obsidian-950 scale-105 shadow-gold-400/30' 
-                                                            : 'glass-obsidian text-slate-200 hover:text-gold-300 border border-gold-400/30'
+                                                            ? 'btn-primary-gradient text-white scale-105 shadow-brand-500/30' 
+                                                            : 'glass-dark text-slate-200 hover:text-brand-300 border border-brand-500/30'
                                                     }`}
                                                 >
                                                     <span>📍</span>
@@ -1250,10 +1253,10 @@
                                             <div className="relative z-10 text-center my-auto">
                                                 <button 
                                                     onClick={() => setActiveMapLandmark('hq')}
-                                                    className={`inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shadow-xl ${
+                                                    className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xl ${
                                                         activeMapLandmark === 'hq' 
-                                                            ? 'bg-gold-400 text-obsidian-950 scale-105 border border-white' 
-                                                            : 'glass-obsidian text-gold-300 border border-gold-400/40 hover:border-gold-400'
+                                                            ? 'btn-amber-gradient text-midnight-950 scale-105 border border-white font-extrabold' 
+                                                            : 'glass-dark text-amberGlow-400 border border-amberGlow-500/40 hover:border-amberGlow-400'
                                                     }`}
                                                 >
                                                     <span>🏢</span>
@@ -1265,10 +1268,10 @@
                                             <div className="relative z-10 flex justify-between items-end">
                                                 <button 
                                                     onClick={() => setActiveMapLandmark('mohammad')}
-                                                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-1 ${
+                                                    className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md flex items-center space-x-1.5 ${
                                                         activeMapLandmark === 'mohammad' 
-                                                            ? 'gold-button-gradient text-obsidian-950 scale-105 shadow-gold-400/30' 
-                                                            : 'glass-obsidian text-slate-200 hover:text-gold-300 border border-gold-400/30'
+                                                            ? 'btn-primary-gradient text-white scale-105 shadow-brand-500/30' 
+                                                            : 'glass-dark text-slate-200 hover:text-brand-300 border border-brand-500/30'
                                                     }`}
                                                 >
                                                     <span>📍</span>
@@ -1277,10 +1280,10 @@
 
                                                 <button 
                                                     onClick={() => setActiveMapLandmark('millat')}
-                                                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-1 ${
+                                                    className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md flex items-center space-x-1.5 ${
                                                         activeMapLandmark === 'millat' 
-                                                            ? 'gold-button-gradient text-obsidian-950 scale-105 shadow-gold-400/30' 
-                                                            : 'glass-obsidian text-slate-200 hover:text-gold-300 border border-gold-400/30'
+                                                            ? 'btn-primary-gradient text-white scale-105 shadow-brand-500/30' 
+                                                            : 'glass-dark text-slate-200 hover:text-brand-300 border border-brand-500/30'
                                                     }`}
                                                 >
                                                     <span>📍</span>
@@ -1291,41 +1294,41 @@
                                     </div>
 
                                     {/* Selected Landmark Detail Inspector */}
-                                    <div className="glass-obsidian p-6 rounded-2xl border border-gold-400/30 shadow-xl transition-all">
+                                    <div className="glass-dark p-6 sm:p-7 rounded-2xl border border-brand-500/30 shadow-xl transition-all">
                                         
                                         {activeMapLandmark === 'hawwa' && (
                                             <div className="space-y-4">
-                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold-400/15 pb-3">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
                                                     <div>
-                                                        <span className="text-[11px] font-bold text-gold-400 uppercase tracking-widest">100FT DP ROAD FRONTAGE</span>
-                                                        <h3 className="font-serif text-2xl font-bold text-white mt-0.5">Hawwa Tower</h3>
+                                                        <span className="text-xs font-bold text-amberGlow-400 uppercase tracking-widest">100FT DP ROAD FRONTAGE</span>
+                                                        <h3 className="font-sans text-2xl font-black text-white mt-1">Hawwa Tower</h3>
                                                     </div>
-                                                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/15 px-3 py-1 rounded-full border border-emerald-500/30 w-fit">
+                                                    <span className="text-xs sm:text-sm font-bold text-emeraldGlow-400 bg-emeraldGlow-500/15 px-3.5 py-1.5 rounded-full border border-emeraldGlow-500/30 w-fit">
                                                         ✓ Ready Possession
                                                     </span>
                                                 </div>
-                                                <div className="space-y-2 text-xs sm:text-sm text-slate-200 font-light">
+                                                <div className="space-y-2.5 text-xs sm:text-base text-slate-200 font-normal">
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">📍 Exact Address:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">📍 Exact Address:</span>
                                                         <span>Opposite Hawwa Masjid, 100ft DP Ring Road (Connecting Old Agra Rd to Camp), Malegaon – 423203</span>
                                                     </p>
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">🚗 Arterial Access:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">🚗 Arterial Access:</span>
                                                         <span>Direct 100-foot wide main road frontage with ground-floor commercial showrooms and zero congestions.</span>
                                                     </p>
                                                 </div>
-                                                <div className="pt-2 flex flex-wrap gap-3">
+                                                <div className="pt-3 flex flex-wrap gap-3">
                                                     <a 
                                                         href="https://www.google.com/maps/search/?api=1&query=Hawwa+Masjid+100ft+Road+Malegaon" 
                                                         target="_blank" 
                                                         rel="noopener noreferrer"
-                                                        className="px-4 py-2 rounded-lg gold-button-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 shadow-md hover:scale-105 transition-transform"
+                                                        className="px-5 py-3 rounded-xl btn-primary-gradient text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 shadow-md hover:scale-105 transition-transform"
                                                     >
                                                         <span>🗺️ Open in Google Maps</span>
                                                     </a>
                                                     <a 
                                                         href="tel:+919823000000" 
-                                                        className="px-4 py-2 rounded-lg glass-obsidian border border-gold-400/40 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 hover:border-gold-400 transition-colors"
+                                                        className="px-5 py-3 rounded-xl glass-dark border border-brand-500/40 text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 hover:border-brand-400 transition-colors"
                                                     >
                                                         <span>📞 Call Site Office</span>
                                                     </a>
@@ -1335,37 +1338,37 @@
 
                                         {activeMapLandmark === 'makka' && (
                                             <div className="space-y-4">
-                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold-400/15 pb-3">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
                                                     <div>
-                                                        <span className="text-[11px] font-bold text-gold-400 uppercase tracking-widest">CENTRAL SPIRITUAL HUB</span>
-                                                        <h3 className="font-serif text-2xl font-bold text-white mt-0.5">Makka Tower</h3>
+                                                        <span className="text-xs font-bold text-amberGlow-400 uppercase tracking-widest">CENTRAL SPIRITUAL HUB</span>
+                                                        <h3 className="font-sans text-2xl font-black text-white mt-1">Makka Tower</h3>
                                                     </div>
-                                                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/15 px-3 py-1 rounded-full border border-emerald-500/30 w-fit">
+                                                    <span className="text-xs sm:text-sm font-bold text-emeraldGlow-400 bg-emeraldGlow-500/15 px-3.5 py-1.5 rounded-full border border-emeraldGlow-500/30 w-fit">
                                                         ✓ Reserved Parking Bays
                                                     </span>
                                                 </div>
-                                                <div className="space-y-2 text-xs sm:text-sm text-slate-200 font-light">
+                                                <div className="space-y-2.5 text-xs sm:text-base text-slate-200 font-normal">
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">📍 Exact Address:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">📍 Exact Address:</span>
                                                         <span>Directly Opposite Makkah Masjid, Islampura / Nayapura Main Road, Malegaon – 423203</span>
                                                     </p>
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">🚗 Arterial Access:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">🚗 Arterial Access:</span>
                                                         <span>Walking distance to major mosques, retail markets, with covered reserved basement parking.</span>
                                                     </p>
                                                 </div>
-                                                <div className="pt-2 flex flex-wrap gap-3">
+                                                <div className="pt-3 flex flex-wrap gap-3">
                                                     <a 
                                                         href="https://www.google.com/maps/search/?api=1&query=Makkah+Masjid+Malegaon" 
                                                         target="_blank" 
                                                         rel="noopener noreferrer"
-                                                        className="px-4 py-2 rounded-lg gold-button-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 shadow-md hover:scale-105 transition-transform"
+                                                        className="px-5 py-3 rounded-xl btn-primary-gradient text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 shadow-md hover:scale-105 transition-transform"
                                                     >
                                                         <span>🗺️ Open in Google Maps</span>
                                                     </a>
                                                     <a 
                                                         href="tel:+919823000000" 
-                                                        className="px-4 py-2 rounded-lg glass-obsidian border border-gold-400/40 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 hover:border-gold-400 transition-colors"
+                                                        className="px-5 py-3 rounded-xl glass-dark border border-brand-500/40 text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 hover:border-brand-400 transition-colors"
                                                     >
                                                         <span>📞 Call Site Office</span>
                                                     </a>
@@ -1375,37 +1378,37 @@
 
                                         {activeMapLandmark === 'mohammad' && (
                                             <div className="space-y-4">
-                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold-400/15 pb-3">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
                                                     <div>
-                                                        <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest">PEACEFUL FAMILY ENCLAVE</span>
-                                                        <h3 className="font-serif text-2xl font-bold text-white mt-0.5">Mohammad Tower</h3>
+                                                        <span className="text-xs font-bold text-emeraldGlow-400 uppercase tracking-widest">PEACEFUL FAMILY ENCLAVE</span>
+                                                        <h3 className="font-sans text-2xl font-black text-white mt-1">Mohammad Tower</h3>
                                                     </div>
-                                                    <span className="text-xs font-semibold text-gold-300 bg-gold-400/15 px-3 py-1 rounded-full border border-gold-400/30 w-fit">
+                                                    <span className="text-xs sm:text-sm font-bold text-brand-300 bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 w-fit">
                                                         ✓ High Natural Breeze
                                                     </span>
                                                 </div>
-                                                <div className="space-y-2 text-xs sm:text-sm text-slate-200 font-light">
+                                                <div className="space-y-2.5 text-xs sm:text-base text-slate-200 font-normal">
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">📍 Exact Address:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">📍 Exact Address:</span>
                                                         <span>Near Hazrat Ji Masjid, Golden Nagar Extension, Malegaon – 423203</span>
                                                     </p>
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">🚗 Arterial Access:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">🚗 Arterial Access:</span>
                                                         <span>Serene, low-traffic residential zone designed for maximum peace, privacy, and sunlight.</span>
                                                     </p>
                                                 </div>
-                                                <div className="pt-2 flex flex-wrap gap-3">
+                                                <div className="pt-3 flex flex-wrap gap-3">
                                                     <a 
                                                         href="https://www.google.com/maps/search/?api=1&query=Hazrat+Ji+Masjid+Malegaon" 
                                                         target="_blank" 
                                                         rel="noopener noreferrer"
-                                                        className="px-4 py-2 rounded-lg gold-button-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 shadow-md hover:scale-105 transition-transform"
+                                                        className="px-5 py-3 rounded-xl btn-primary-gradient text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 shadow-md hover:scale-105 transition-transform"
                                                     >
                                                         <span>🗺️ Open in Google Maps</span>
                                                     </a>
                                                     <a 
                                                         href="tel:+919823000000" 
-                                                        className="px-4 py-2 rounded-lg glass-obsidian border border-gold-400/40 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 hover:border-gold-400 transition-colors"
+                                                        className="px-5 py-3 rounded-xl glass-dark border border-brand-500/40 text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 hover:border-brand-400 transition-colors"
                                                     >
                                                         <span>📞 Call Site Office</span>
                                                     </a>
@@ -1415,37 +1418,37 @@
 
                                         {activeMapLandmark === 'millat' && (
                                             <div className="space-y-4">
-                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold-400/15 pb-3">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
                                                     <div>
-                                                        <span className="text-[11px] font-bold text-gold-400 uppercase tracking-widest">PREMIER EDUCATIONAL DISTRICT</span>
-                                                        <h3 className="font-serif text-2xl font-bold text-white mt-0.5">Millat Tower</h3>
+                                                        <span className="text-xs font-bold text-amberGlow-400 uppercase tracking-widest">PREMIER EDUCATIONAL DISTRICT</span>
+                                                        <h3 className="font-sans text-2xl font-black text-white mt-1">Millat Tower</h3>
                                                     </div>
-                                                    <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/15 px-3 py-1 rounded-full border border-emerald-500/30 w-fit">
+                                                    <span className="text-xs sm:text-sm font-bold text-emeraldGlow-400 bg-emeraldGlow-500/15 px-3.5 py-1.5 rounded-full border border-emeraldGlow-500/30 w-fit">
                                                         ✓ Solar Elevator Equipped
                                                     </span>
                                                 </div>
-                                                <div className="space-y-2 text-xs sm:text-sm text-slate-200 font-light">
+                                                <div className="space-y-2.5 text-xs sm:text-base text-slate-200 font-normal">
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">📍 Exact Address:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">📍 Exact Address:</span>
                                                         <span>Opposite Millat Boys Madrasa & Gulshan High School, Qidwai Road / Mohammad Ali Rd, Malegaon – 423203</span>
                                                     </p>
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">🚗 Arterial Access:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">🚗 Arterial Access:</span>
                                                         <span>Immediate 1-minute walking distance to premier schools and colleges for children.</span>
                                                     </p>
                                                 </div>
-                                                <div className="pt-2 flex flex-wrap gap-3">
+                                                <div className="pt-3 flex flex-wrap gap-3">
                                                     <a 
                                                         href="https://www.google.com/maps/search/?api=1&query=Millat+Madrasa+Malegaon" 
                                                         target="_blank" 
                                                         rel="noopener noreferrer"
-                                                        className="px-4 py-2 rounded-lg gold-button-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 shadow-md hover:scale-105 transition-transform"
+                                                        className="px-5 py-3 rounded-xl btn-primary-gradient text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 shadow-md hover:scale-105 transition-transform"
                                                     >
                                                         <span>🗺️ Open in Google Maps</span>
                                                     </a>
                                                     <a 
                                                         href="tel:+919823000000" 
-                                                        className="px-4 py-2 rounded-lg glass-obsidian border border-gold-400/40 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 hover:border-gold-400 transition-colors"
+                                                        className="px-5 py-3 rounded-xl glass-dark border border-brand-500/40 text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 hover:border-brand-400 transition-colors"
                                                     >
                                                         <span>📞 Call Site Office</span>
                                                     </a>
@@ -1455,37 +1458,37 @@
 
                                         {activeMapLandmark === 'hq' && (
                                             <div className="space-y-4">
-                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold-400/15 pb-3">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
                                                     <div>
-                                                        <span className="text-[11px] font-bold text-gold-400 uppercase tracking-widest">EXECUTIVE DEVELOPER HEADQUARTERS</span>
-                                                        <h3 className="font-serif text-2xl font-bold text-white mt-0.5">Titanic Business Hub</h3>
+                                                        <span className="text-xs font-bold text-amberGlow-400 uppercase tracking-widest">EXECUTIVE DEVELOPER HEADQUARTERS</span>
+                                                        <h3 className="font-sans text-2xl font-black text-white mt-1">Titanic Business Hub</h3>
                                                     </div>
-                                                    <span className="text-xs font-semibold text-gold-300 bg-gold-400/15 px-3 py-1 rounded-full border border-gold-400/30 w-fit">
+                                                    <span className="text-xs sm:text-sm font-bold text-brand-300 bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 w-fit">
                                                         🏢 Er. Irfan Group Office
                                                     </span>
                                                 </div>
-                                                <div className="space-y-2 text-xs sm:text-sm text-slate-200 font-light">
+                                                <div className="space-y-2.5 text-xs sm:text-base text-slate-200 font-normal">
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">📍 Exact Address:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">📍 Exact Address:</span>
                                                         <span>Office No. 1, 2nd Floor, Titanic Business Hub, Mohammad Ali Road / Old Agra Road, Malegaon – 423203</span>
                                                     </p>
                                                     <p className="flex items-start space-x-2">
-                                                        <span className="text-gold-400 font-bold shrink-0">🏛️ Office Services:</span>
+                                                        <span className="text-brand-300 font-bold shrink-0">🏛️ Office Services:</span>
                                                         <span>VIP site visit bookings, official corporation sanction blueprints review, and bank loan documentation.</span>
                                                     </p>
                                                 </div>
-                                                <div className="pt-2 flex flex-wrap gap-3">
+                                                <div className="pt-3 flex flex-wrap gap-3">
                                                     <a 
                                                         href="https://www.google.com/maps/search/?api=1&query=Titanic+Business+Hub+Malegaon" 
                                                         target="_blank" 
                                                         rel="noopener noreferrer"
-                                                        className="px-4 py-2 rounded-lg gold-button-gradient text-obsidian-950 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 shadow-md hover:scale-105 transition-transform"
+                                                        className="px-5 py-3 rounded-xl btn-primary-gradient text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 shadow-md hover:scale-105 transition-transform"
                                                     >
                                                         <span>🗺️ Open in Google Maps</span>
                                                     </a>
                                                     <a 
                                                         href="tel:+919823000000" 
-                                                        className="px-4 py-2 rounded-lg glass-obsidian border border-gold-400/40 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center space-x-1.5 hover:border-gold-400 transition-colors"
+                                                        className="px-5 py-3 rounded-xl glass-dark border border-brand-500/40 text-brand-300 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center space-x-2 hover:border-brand-400 transition-colors"
                                                     >
                                                         <span>📞 Schedule Office Visit</span>
                                                     </a>
@@ -1497,68 +1500,68 @@
                                 </div>
 
                                 {/* Right Column: Distance to Key Landmarks (5 Cols) */}
-                                <div className="lg:col-span-5 space-y-6">
+                                <div className="lg:col-span-5 space-y-5">
                                     <div>
-                                        <span className="text-gold-400 text-xs font-bold uppercase tracking-widest">Neighborhood Travel Times</span>
-                                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+                                        <span className="text-brand-400 text-xs sm:text-sm font-bold uppercase tracking-widest">Neighborhood Travel Times</span>
+                                        <h3 className="font-sans text-2xl sm:text-3xl font-black text-white mt-1">
                                             Distance to Key Landmarks
                                         </h3>
                                     </div>
 
-                                    <div className="space-y-3.5">
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 hover:border-gold-400/50 transition-colors flex items-center justify-between">
+                                    <div className="space-y-3">
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 hover:border-brand-500/50 transition-colors flex items-center justify-between">
                                             <div className="flex items-center space-x-3.5">
                                                 <span className="text-2xl">🕌</span>
                                                 <div>
-                                                    <h4 className="font-bold text-sm text-white">Makkah Masjid & Hawwa Masjid</h4>
-                                                    <p className="text-xs text-slate-400 font-light">Situated directly opposite towers</p>
+                                                    <h4 className="font-bold text-sm sm:text-base text-white">Makkah Masjid & Hawwa Masjid</h4>
+                                                    <p className="text-xs sm:text-sm text-slate-300 font-normal">Situated directly opposite towers</p>
                                                 </div>
                                             </div>
-                                            <span className="text-gold-300 font-extrabold text-xs bg-gold-400/10 px-3 py-1 rounded-full border border-gold-400/30 shrink-0">0 Mins</span>
+                                            <span className="text-brand-300 font-extrabold text-xs sm:text-sm bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 shrink-0">0 Mins</span>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 hover:border-gold-400/50 transition-colors flex items-center justify-between">
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 hover:border-brand-500/50 transition-colors flex items-center justify-between">
                                             <div className="flex items-center space-x-3.5">
                                                 <span className="text-2xl">🎓</span>
                                                 <div>
-                                                    <h4 className="font-bold text-sm text-white">Millat Madrasa & Gulshan School</h4>
-                                                    <p className="text-xs text-slate-400 font-light">Premier educational corridor</p>
+                                                    <h4 className="font-bold text-sm sm:text-base text-white">Millat Madrasa & Gulshan School</h4>
+                                                    <p className="text-xs sm:text-sm text-slate-300 font-normal">Premier educational corridor</p>
                                                 </div>
                                             </div>
-                                            <span className="text-gold-300 font-extrabold text-xs bg-gold-400/10 px-3 py-1 rounded-full border border-gold-400/30 shrink-0">1 Min</span>
+                                            <span className="text-brand-300 font-extrabold text-xs sm:text-sm bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 shrink-0">1 Min</span>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 hover:border-gold-400/50 transition-colors flex items-center justify-between">
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 hover:border-brand-500/50 transition-colors flex items-center justify-between">
                                             <div className="flex items-center space-x-3.5">
                                                 <span className="text-2xl">🏫</span>
                                                 <div>
-                                                    <h4 className="font-bold text-sm text-white">Sardar High School & Hazrat Ji Masjid</h4>
-                                                    <p className="text-xs text-slate-400 font-light">Serene residential hub</p>
+                                                    <h4 className="font-bold text-sm sm:text-base text-white">Sardar High School & Hazrat Ji Masjid</h4>
+                                                    <p className="text-xs sm:text-sm text-slate-300 font-normal">Serene residential hub</p>
                                                 </div>
                                             </div>
-                                            <span className="text-gold-300 font-extrabold text-xs bg-gold-400/10 px-3 py-1 rounded-full border border-gold-400/30 shrink-0">2 Mins</span>
+                                            <span className="text-brand-300 font-extrabold text-xs sm:text-sm bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 shrink-0">2 Mins</span>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 hover:border-gold-400/50 transition-colors flex items-center justify-between">
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 hover:border-brand-500/50 transition-colors flex items-center justify-between">
                                             <div className="flex items-center space-x-3.5">
                                                 <span className="text-2xl">🛣️</span>
                                                 <div>
-                                                    <h4 className="font-bold text-sm text-white">Old Agra Road & Mohammad Ali Road</h4>
-                                                    <p className="text-xs text-slate-400 font-light">Direct highway transit arterials</p>
+                                                    <h4 className="font-bold text-sm sm:text-base text-white">Old Agra Road & Mohammad Ali Road</h4>
+                                                    <p className="text-xs sm:text-sm text-slate-300 font-normal">Direct highway transit arterials</p>
                                                 </div>
                                             </div>
-                                            <span className="text-gold-300 font-extrabold text-xs bg-gold-400/10 px-3 py-1 rounded-full border border-gold-400/30 shrink-0">Immediate</span>
+                                            <span className="text-brand-300 font-extrabold text-xs sm:text-sm bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 shrink-0">Immediate</span>
                                         </div>
 
-                                        <div className="p-4 rounded-xl glass-obsidian border border-gold-400/20 hover:border-gold-400/50 transition-colors flex items-center justify-between">
+                                        <div className="p-4 rounded-xl glass-dark border border-slate-800 hover:border-brand-500/50 transition-colors flex items-center justify-between">
                                             <div className="flex items-center space-x-3.5">
                                                 <span className="text-2xl">🏢</span>
                                                 <div>
-                                                    <h4 className="font-bold text-sm text-white">Titanic Business Hub (Developer HQ)</h4>
-                                                    <p className="text-xs text-slate-400 font-light">Corporate office & inquiry center</p>
+                                                    <h4 className="font-bold text-sm sm:text-base text-white">Titanic Business Hub (Developer HQ)</h4>
+                                                    <p className="text-xs sm:text-sm text-slate-300 font-normal">Corporate office & inquiry center</p>
                                                 </div>
                                             </div>
-                                            <span className="text-gold-300 font-extrabold text-xs bg-gold-400/10 px-3 py-1 rounded-full border border-gold-400/30 shrink-0">Central</span>
+                                            <span className="text-brand-300 font-extrabold text-xs sm:text-sm bg-brand-500/15 px-3.5 py-1.5 rounded-full border border-brand-500/30 shrink-0">Central</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1567,52 +1570,52 @@
                         </div>
                     </section>
 
-                    {}
-                    <section id="legacy" className="py-20 bg-ivory-50 text-obsidian-950 border-t border-gold-400/30">
+                    {/* TRACK RECORD & LEGACY */}
+                    <section id="legacy" className="py-16 sm:py-24 bg-slate-900 text-white border-t border-slate-800">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             
-                            <div className="text-center max-w-3xl mx-auto mb-16">
-                                <span className="text-gold-700 text-xs font-bold uppercase tracking-[0.25em]">Proven Track Record</span>
-                                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-obsidian-950 mt-2">
+                            <div className="text-center max-w-3xl mx-auto mb-14">
+                                <span className="text-brand-400 text-xs sm:text-sm font-bold uppercase tracking-[0.25em]">Proven Track Record</span>
+                                <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white mt-2">
                                     A Legacy Built on Delivery.
                                 </h2>
-                                <p className="text-slate-600 mt-3 text-xs sm:text-base font-light">
+                                <p className="text-slate-200 mt-3 text-sm sm:text-lg font-normal">
                                     Er. Irfan Group / Heritage Consultant & Developers has successfully delivered key landmark towers in Malegaon.
                                 </p>
                             </div>
 
                             {/* Completed Delivered Towers */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-14">
                                 
-                                <div className="bg-white p-8 rounded-2xl border border-gold-200 shadow-md text-center">
-                                    <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-full flex items-center justify-center font-bold font-serif mx-auto mb-4 text-xl border border-gold-300">
+                                <div className="bg-slate-800/80 p-6 sm:p-8 rounded-2xl border border-slate-700/80 shadow-md text-center">
+                                    <div className="w-14 h-14 bg-brand-500/20 text-brand-300 rounded-full flex items-center justify-center font-bold font-sans mx-auto mb-4 text-2xl border border-brand-500/30">
                                         ✓
                                     </div>
-                                    <h3 className="font-serif text-2xl font-bold text-obsidian-950 mb-1">Alhamd Tower</h3>
-                                    <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-widest block mb-3">100% Completed & Handed Over</span>
-                                    <p className="text-slate-600 text-xs leading-relaxed font-light">
+                                    <h3 className="font-sans text-2xl font-bold text-white mb-1">Alhamd Tower</h3>
+                                    <span className="text-xs text-emeraldGlow-400 font-bold uppercase tracking-widest block mb-3">100% Completed & Handed Over</span>
+                                    <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                         Fully occupied high-rise landmark known for clear title paperwork and quality structural execution.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-8 rounded-2xl border border-gold-200 shadow-md text-center">
-                                    <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-full flex items-center justify-center font-bold font-serif mx-auto mb-4 text-xl border border-gold-300">
+                                <div className="bg-slate-800/80 p-6 sm:p-8 rounded-2xl border border-slate-700/80 shadow-md text-center">
+                                    <div className="w-14 h-14 bg-brand-500/20 text-brand-300 rounded-full flex items-center justify-center font-bold font-sans mx-auto mb-4 text-2xl border border-brand-500/30">
                                         ✓
                                     </div>
-                                    <h3 className="font-serif text-2xl font-bold text-obsidian-950 mb-1">Lucky Tower</h3>
-                                    <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-widest block mb-3">100% Completed & Handed Over</span>
-                                    <p className="text-slate-600 text-xs leading-relaxed font-light">
+                                    <h3 className="font-sans text-2xl font-bold text-white mb-1">Lucky Tower</h3>
+                                    <span className="text-xs text-emeraldGlow-400 font-bold uppercase tracking-widest block mb-3">100% Completed & Handed Over</span>
+                                    <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                         Recognized for spacious family floor plans, durable finishes, and long-term asset value.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-8 rounded-2xl border border-gold-200 shadow-md text-center">
-                                    <div className="w-12 h-12 bg-gold-100 text-gold-700 rounded-full flex items-center justify-center font-bold font-serif mx-auto mb-4 text-xl border border-gold-300">
+                                <div className="bg-slate-800/80 p-6 sm:p-8 rounded-2xl border border-slate-700/80 shadow-md text-center">
+                                    <div className="w-14 h-14 bg-brand-500/20 text-brand-300 rounded-full flex items-center justify-center font-bold font-sans mx-auto mb-4 text-2xl border border-brand-500/30">
                                         ✓
                                     </div>
-                                    <h3 className="font-serif text-2xl font-bold text-obsidian-950 mb-1">Al-Aqsa Tower</h3>
-                                    <span className="text-[10px] text-emerald-700 font-bold uppercase tracking-widest block mb-3">100% Completed & Handed Over</span>
-                                    <p className="text-slate-600 text-xs leading-relaxed font-light">
+                                    <h3 className="font-sans text-2xl font-bold text-white mb-1">Al-Aqsa Tower</h3>
+                                    <span className="text-xs text-emeraldGlow-400 font-bold uppercase tracking-widest block mb-3">100% Completed & Handed Over</span>
+                                    <p className="text-slate-200 text-xs sm:text-sm leading-relaxed font-normal">
                                         Prime landmark development situated near Aman Chowk, Old Agra Road.
                                     </p>
                                 </div>
@@ -1620,56 +1623,54 @@
                             </div>
 
                             {/* Trust Stats Counter */}
-                            <div className="bg-obsidian-950 text-white rounded-2xl p-8 sm:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center shadow-2xl border border-gold-400/30">
+                            <div className="bg-midnight-950 text-white rounded-2xl p-6 sm:p-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center shadow-2xl border border-slate-800">
                                 <div>
-                                    <div className="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text">15+</div>
-                                    <div className="text-[10px] text-slate-400 mt-2 uppercase tracking-[0.2em]">Years Track Record</div>
+                                    <div className="font-sans text-3xl sm:text-5xl font-black text-brand-400 whitespace-nowrap">15+</div>
+                                    <div className="text-[11px] sm:text-xs text-slate-300 mt-2 uppercase tracking-wider font-semibold whitespace-nowrap">Years Track Record</div>
                                 </div>
                                 <div>
-                                    <div className="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text">500+</div>
-                                    <div className="text-[10px] text-slate-400 mt-2 uppercase tracking-[0.2em]">Satisfied Families</div>
+                                    <div className="font-sans text-3xl sm:text-5xl font-black text-brand-400 whitespace-nowrap">500+</div>
+                                    <div className="text-[11px] sm:text-xs text-slate-300 mt-2 uppercase tracking-wider font-semibold whitespace-nowrap">Satisfied Families</div>
                                 </div>
                                 <div>
-                                    <div className="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text">100%</div>
-                                    <div className="text-[10px] text-slate-400 mt-2 uppercase tracking-[0.2em]">Corporation Approved</div>
+                                    <div className="font-sans text-3xl sm:text-5xl font-black text-emeraldGlow-400 whitespace-nowrap">100%</div>
+                                    <div className="text-[11px] sm:text-xs text-slate-300 mt-2 uppercase tracking-wider font-semibold whitespace-nowrap">Corp. Approved</div>
                                 </div>
                                 <div>
-                                    <div className="font-serif text-3xl sm:text-5xl font-extrabold gold-gradient-text">25 Yrs</div>
-                                    <div className="text-[10px] text-slate-400 mt-2 uppercase tracking-[0.2em]">Free Solar Power</div>
+                                    <div className="font-sans text-3xl sm:text-5xl font-black text-amberGlow-400 whitespace-nowrap">25 Yrs</div>
+                                    <div className="text-[11px] sm:text-xs text-slate-300 mt-2 uppercase tracking-wider font-semibold whitespace-nowrap">Free Solar Power</div>
                                 </div>
                             </div>
 
                         </div>
                     </section>
 
-
-
-                    {}
-                    <footer className="bg-obsidian-950 text-slate-400 py-16 border-t border-gold-400/20 text-xs">
+                    {/* FOOTER */}
+                    <footer className="bg-midnight-950 text-slate-300 py-14 border-t border-slate-800/80 text-xs sm:text-sm">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-gold-400/15">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-slate-800">
                                 
                                 {/* Company Info */}
-                                <div className="space-y-4">
+                                <div className="space-y-3.5">
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-9 h-9 rounded-lg gold-button-gradient flex items-center justify-center font-serif font-bold text-obsidian-950 text-lg">
+                                        <div className="w-10 h-10 rounded-xl btn-primary-gradient flex items-center justify-center font-sans font-bold text-white text-xl shadow-md">
                                             H
                                         </div>
                                         <div>
-                                            <span className="font-serif font-bold text-white text-base">Er. Irfan Group</span>
-                                            <span className="block text-[9px] text-gold-400 uppercase tracking-widest font-semibold">Heritage Consultant & Developers</span>
+                                            <span className="font-sans font-bold text-white text-lg">Er. Irfan Group</span>
+                                            <span className="block text-xs text-brand-400 uppercase tracking-widest font-bold">Heritage Consultant & Developers</span>
                                         </div>
                                     </div>
-                                    <p className="text-xs text-slate-400 leading-relaxed font-light">
+                                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                                         Transforming Malegaon's residential skyline with solar-powered apartments, verified titles, and zero-maintenance infrastructure.
                                     </p>
                                 </div>
 
                                 {/* Office Address */}
                                 <div className="space-y-3">
-                                    <h4 className="text-gold-400 font-bold text-xs uppercase tracking-widest">Corporate Head Office</h4>
-                                    <p className="text-xs text-slate-300 leading-relaxed font-light">
+                                    <h4 className="text-brand-400 font-bold text-xs sm:text-sm uppercase tracking-widest">Corporate Head Office</h4>
+                                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
                                         📍 <strong>Titanic Business Hub</strong><br />
                                         Near Aman Chowk / Al-Aqsa Tower,<br />
                                         Old Agra Road, Malegaon, Maharashtra 423203.
@@ -1678,17 +1679,17 @@
 
                                 {/* Leadership Direct Lines */}
                                 <div className="space-y-3">
-                                    <h4 className="text-gold-400 font-bold text-xs uppercase tracking-widest">Direct Leadership Lines</h4>
-                                    <ul className="text-xs space-y-2 text-slate-300 font-light">
+                                    <h4 className="text-brand-400 font-bold text-xs sm:text-sm uppercase tracking-widest">Direct Leadership Lines</h4>
+                                    <ul className="text-xs sm:text-sm space-y-2.5 text-slate-200 font-normal">
                                         <li className="flex items-center space-x-2">
-                                            <span className="text-gold-400">👤</span>
+                                            <span className="text-brand-400">👤</span>
                                             <span><strong>Engg. Irfan Ahmed</strong> — Principal Developer</span>
                                         </li>
                                         <li className="flex items-center space-x-2">
-                                            <span className="text-gold-400">👤</span>
+                                            <span className="text-brand-400">👤</span>
                                             <span><strong>Haji Zafarullah</strong> — Director</span>
                                         </li>
-                                        <li className="flex items-center space-x-2 pt-1 text-gold-300 font-medium">
+                                        <li className="flex items-center space-x-2 pt-1 text-brand-300 font-semibold">
                                             <span>📞 Site Office: Open Daily 10:00 AM - 8:00 PM</span>
                                         </li>
                                     </ul>
@@ -1697,9 +1698,9 @@
                             </div>
 
                             {/* Legal Disclaimer & Copyright */}
-                            <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-4">
+                            <div className="pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-400 gap-4">
                                 <p>© {new Date().getFullYear()} Er. Irfan Group / Heritage Consultant & Developers. All Rights Reserved.</p>
-                                <p className="text-[10px] text-slate-600 max-w-md text-center sm:text-right font-light">
+                                <p className="text-xs text-slate-500 max-w-md text-center sm:text-right font-normal">
                                     Disclaimer: Architectural renders, dimensions, and visualizations are artistic representations for presentation purposes. Approved plans are available at our Titanic Business Hub office.
                                 </p>
                             </div>
@@ -1707,11 +1708,11 @@
                         </div>
                     </footer>
 
-                    {/* Floating Mobile Quick Action Glass Bar (Visible only when scrolled down) */}
+                    {/* Floating Mobile Quick Action Bar */}
                     <div className={`fixed bottom-4 right-4 z-40 flex items-center space-x-2 transition-all duration-300 transform ${showFloatingPass ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-12 opacity-0 pointer-events-none'}`}>
                         <a 
                             href="#hero"
-                            className="gold-button-gradient text-obsidian-950 font-extrabold px-5 py-3.5 rounded-full shadow-2xl flex items-center space-x-2 text-xs sm:text-sm border border-gold-300 transition-transform hover:scale-105"
+                            className="btn-primary-gradient text-white font-extrabold px-5 py-3.5 rounded-full shadow-2xl flex items-center space-x-2 text-xs sm:text-sm border border-brand-400/40 transition-transform hover:scale-105"
                         >
                             <span>🎟️ VIP Site Visit Pass</span>
                         </a>
